@@ -14,6 +14,8 @@
 	</div>
 </div>
 <div id='about'></div>
+
+<div></div>
 <div></div>
 <div></div>
 <div></div>
