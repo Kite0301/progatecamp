@@ -1,10 +1,38 @@
-#htop-logo{color: black;}
+.top
+{
+	height: 600px;
+}
 
-#top-navi{}
+.top-logo
+{
+	color: black;
+}
 
-#navi-item{float: right;}
+.top-navi
+{
 
-li.navi-item{
+}
+
+.navi-item
+{
+	float: right;
+}
+
+.navi-item li 
+{
 	float: right;
 	color: red;
-	}
+}
+
+.title
+{
+	text-align: center;
+	color: red;
+	font-size: 30px;
+}
+
+.about
+{
+	height: 400px;
+	background-color: #EEE;
+}
