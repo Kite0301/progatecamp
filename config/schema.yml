@@ -1,0 +1,9 @@
+propel:
+  user:
+    name: varchar(60)
+    email: varchar(60)
+    facebook_id: varchar(255)
+    twitter_id: varchar(255)
+    display: integer
+    created_at:
+    updated_at:

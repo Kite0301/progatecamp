@@ -1,0 +1,10 @@
+#htop-logo{color: black;}
+
+#top-navi{}
+
+#navi-item{float: right;}
+
+li.navi-item{
+	float: right;
+	color: red;
+	}
