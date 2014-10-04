@@ -104,6 +104,27 @@
 		</div>
 	</div>
 </div>
-<div class="schedule"></div>
+<div class="schedule">
+	<div class="schedule-item">
+		<div class="schedule-item-title">week0 - 事前学習</div>
+		<div class="schedule-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </div>
+	</div>
+	<div class="schedule-item">
+		<div class="schedule-item-title">week1 -</div>
+		<div class="schedule-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </div>
+	</div>
+	<div class="schedule-item">
+		<div class="schedule-item-title">week2</div>
+		<div class="schedule-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </div>
+	</div>
+	<div class="schedule-item">
+		<div class="schedule-item-title">week3</div>
+		<div class="schedule-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </div>
+	</div>
+	<div class="schedule-item">
+		<div class="schedule-item-title">week4</div>
+		<div class="schedule-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </div>
+	</div>
+</div>
 <div class="apply"></div>
 <div class="footer"></div>
