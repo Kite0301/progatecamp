@@ -12,7 +12,17 @@
 				<li>申し込み</li>
 		</div>
 	</div>
-	<div class="title">Learn to Code, Learn to be Creative</div>
+	<div class="top-title">
+		<div class="title">Learn to Code, Learn to be Creative</div>
+		<div class="title-sub">オンラインプログラミング教育サービスのProgateが、オンラインとリアルを組み合わせて提供する新たなプログラミングキャンプ</div>
+	</div>
+	<div>
+		<ul>
+			<li>・プログラミング経験は不問</li>
+			<li>・１ヶ月でゼロからwebサービスを立ち上げ、リリースまでを体験する</li>
+			<li>・事前課題・全体学習・個人課題・質問会を通した、もれのないカリキュラム</li>
+		</ul>
+	</div>
 </div>
 <div class="about"></div>
 
