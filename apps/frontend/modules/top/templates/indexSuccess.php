@@ -32,7 +32,39 @@
 	</div>
 </div>
 
-<div class="learn"></div>
+<div class="learn">
+	<div class="learn-top">学習内容</div>
+	<div class="learn-bottom">
+		<div class="learn-row">
+			<div class="learn-item">
+				<div class="item-top">HTML/CSS</div>
+				<div class="item-bottom"></div>
+			</div>
+			<div class="learn-item">
+				<div class="item-top">jquery</div>
+				<div class="item-bottom"></div>
+			</div>
+			<div class="learn-item">
+				<div class="item-top">git</div>
+				<div class="item-bottom"></div>
+			</div>
+		</div>
+		<div class="learn-row">
+			<div class="learn-item">
+				<div class="item-top">PHP</div>
+				<div class="item-bottom"></div>
+			</div>
+			<div class="learn-item">
+				<div class="item-top">MySQL</div>
+				<div class="item-bottom"></div>
+			</div>
+			<div class="learn-item">
+				<div class="item-top">Linux</div>
+				<div class="item-bottom"></div>
+			</div>
+		</div>	
+	</div>
+</div>
 <div class="schedule"></div>
 <div class="apply"></div>
 <div class="footer"></div>
