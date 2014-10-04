@@ -1,5 +1,5 @@
 <div class="top">
-	<div class="header">
+	<div class="top-header">
 		<div class="top-logo">
 			<h2>PROGATE</h2>
 			<h1>BOOT CAMP</h1>
@@ -14,10 +14,10 @@
 	</div>
 	<div class="top-title">
 		<div class="title">Learn to Code, Learn to be Creative</div>
-		<div class="title-sub">オンラインプログラミング教育サービスのProgateが、オンラインとリアルを組み合わせて提供する新たなプログラミングキャンプ</div>
+		<div class="title-sub">−学歴・年齢不問。志あるものが集い、倍速で成長する−</div>
 	</div>
-	<div>
-		<ul>
+	<div class="top-main">
+		<ul class="top-list">
 			<li>・プログラミング経験は不問</li>
 			<li>・１ヶ月でゼロからwebサービスを立ち上げ、リリースまでを体験する</li>
 			<li>・事前課題・全体学習・個人課題・質問会を通した、もれのないカリキュラム</li>

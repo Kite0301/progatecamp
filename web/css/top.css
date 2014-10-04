@@ -3,25 +3,39 @@
 	height: 600px;
 }
 
+.top-header
+{
+	height:50px;
+}
+
 .top-logo
 {
 	color: black;
+	float: left;
 }
 
 .top-navi
 {
-
+	float: right;
 }
 
 .navi-item
 {
-	float: right;
+	
 }
 
 .navi-item li 
 {
-	float: right;
-	color: red;
+	float: left;
+	list-style: none;
+	padding: 0 8px;
+	font-size: 20px;
+}
+
+.top-title
+{
+	height:300px;
+	margin-top: 100px;
 }
 
 .title
@@ -29,6 +43,29 @@
 	text-align: center;
 	color: red;
 	font-size: 30px;
+	margin: 8px;
+}
+
+.title-sub
+{
+	text-align: center;
+	font-size: 15px;
+}
+
+.top-main
+{
+	text-align: center;
+}
+
+.top-list
+{
+
+}
+
+.top-list li
+{
+	list-style: none;
+
 }
 
 .about
