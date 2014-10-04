@@ -1,7 +1,15 @@
 propel:
   user:
     name: varchar(60)
+    kana: varchar(60)
+    birthday: timestamp
+    gender: varchar(20)
     email: varchar(60)
+    phone_number: varchar(20)
+    group: varchar(60)
+    reason: longvarchar
+    usage: longvarchar
+    confirm: { type: integer, default: 0 }
     facebook_id: varchar(255)
     twitter_id: varchar(255)
     display: integer

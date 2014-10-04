@@ -13,7 +13,39 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 
 	
+	protected $kana;
+
+
+	
+	protected $birthday;
+
+
+	
+	protected $gender;
+
+
+	
 	protected $email;
+
+
+	
+	protected $phone_number;
+
+
+	
+	protected $group;
+
+
+	
+	protected $reason;
+
+
+	
+	protected $usage;
+
+
+	
+	protected $confirm = 0;
 
 
 	
@@ -53,10 +85,81 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 	}
 
 	
+	public function getKana()
+	{
+
+		return $this->kana;
+	}
+
+	
+	public function getBirthday($format = 'Y-m-d H:i:s')
+	{
+
+		if ($this->birthday === null || $this->birthday === '') {
+			return null;
+		} elseif (!is_int($this->birthday)) {
+						$ts = strtotime($this->birthday);
+			if ($ts === -1 || $ts === false) { 				throw new PropelException("Unable to parse value of [birthday] as date/time value: " . var_export($this->birthday, true));
+			}
+		} else {
+			$ts = $this->birthday;
+		}
+		if ($format === null) {
+			return $ts;
+		} elseif (strpos($format, '%') !== false) {
+			return strftime($format, $ts);
+		} else {
+			return date($format, $ts);
+		}
+	}
+
+	
+	public function getGender()
+	{
+
+		return $this->gender;
+	}
+
+	
 	public function getEmail()
 	{
 
 		return $this->email;
+	}
+
+	
+	public function getPhoneNumber()
+	{
+
+		return $this->phone_number;
+	}
+
+	
+	public function getGroup()
+	{
+
+		return $this->group;
+	}
+
+	
+	public function getReason()
+	{
+
+		return $this->reason;
+	}
+
+	
+	public function getUsage()
+	{
+
+		return $this->usage;
+	}
+
+	
+	public function getConfirm()
+	{
+
+		return $this->confirm;
 	}
 
 	
@@ -146,6 +249,51 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 	} 
 	
+	public function setKana($v)
+	{
+
+						if ($v !== null && !is_string($v)) {
+			$v = (string) $v; 
+		}
+
+		if ($this->kana !== $v) {
+			$this->kana = $v;
+			$this->modifiedColumns[] = UserPeer::KANA;
+		}
+
+	} 
+	
+	public function setBirthday($v)
+	{
+
+		if ($v !== null && !is_int($v)) {
+			$ts = strtotime($v);
+			if ($ts === -1 || $ts === false) { 				throw new PropelException("Unable to parse date/time value for [birthday] from input: " . var_export($v, true));
+			}
+		} else {
+			$ts = $v;
+		}
+		if ($this->birthday !== $ts) {
+			$this->birthday = $ts;
+			$this->modifiedColumns[] = UserPeer::BIRTHDAY;
+		}
+
+	} 
+	
+	public function setGender($v)
+	{
+
+						if ($v !== null && !is_string($v)) {
+			$v = (string) $v; 
+		}
+
+		if ($this->gender !== $v) {
+			$this->gender = $v;
+			$this->modifiedColumns[] = UserPeer::GENDER;
+		}
+
+	} 
+	
 	public function setEmail($v)
 	{
 
@@ -156,6 +304,76 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 		if ($this->email !== $v) {
 			$this->email = $v;
 			$this->modifiedColumns[] = UserPeer::EMAIL;
+		}
+
+	} 
+	
+	public function setPhoneNumber($v)
+	{
+
+						if ($v !== null && !is_string($v)) {
+			$v = (string) $v; 
+		}
+
+		if ($this->phone_number !== $v) {
+			$this->phone_number = $v;
+			$this->modifiedColumns[] = UserPeer::PHONE_NUMBER;
+		}
+
+	} 
+	
+	public function setGroup($v)
+	{
+
+						if ($v !== null && !is_string($v)) {
+			$v = (string) $v; 
+		}
+
+		if ($this->group !== $v) {
+			$this->group = $v;
+			$this->modifiedColumns[] = UserPeer::GROUP;
+		}
+
+	} 
+	
+	public function setReason($v)
+	{
+
+						if ($v !== null && !is_string($v)) {
+			$v = (string) $v; 
+		}
+
+		if ($this->reason !== $v) {
+			$this->reason = $v;
+			$this->modifiedColumns[] = UserPeer::REASON;
+		}
+
+	} 
+	
+	public function setUsage($v)
+	{
+
+						if ($v !== null && !is_string($v)) {
+			$v = (string) $v; 
+		}
+
+		if ($this->usage !== $v) {
+			$this->usage = $v;
+			$this->modifiedColumns[] = UserPeer::USAGE;
+		}
+
+	} 
+	
+	public function setConfirm($v)
+	{
+
+						if ($v !== null && !is_int($v) && is_numeric($v)) {
+			$v = (int) $v;
+		}
+
+		if ($this->confirm !== $v || $v === 0) {
+			$this->confirm = $v;
+			$this->modifiedColumns[] = UserPeer::CONFIRM;
 		}
 
 	} 
@@ -256,25 +474,41 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 			$this->name = $rs->getString($startcol + 0);
 
-			$this->email = $rs->getString($startcol + 1);
+			$this->kana = $rs->getString($startcol + 1);
 
-			$this->facebook_id = $rs->getString($startcol + 2);
+			$this->birthday = $rs->getTimestamp($startcol + 2, null);
 
-			$this->twitter_id = $rs->getString($startcol + 3);
+			$this->gender = $rs->getString($startcol + 3);
 
-			$this->display = $rs->getInt($startcol + 4);
+			$this->email = $rs->getString($startcol + 4);
 
-			$this->created_at = $rs->getTimestamp($startcol + 5, null);
+			$this->phone_number = $rs->getString($startcol + 5);
 
-			$this->updated_at = $rs->getTimestamp($startcol + 6, null);
+			$this->group = $rs->getString($startcol + 6);
 
-			$this->id = $rs->getInt($startcol + 7);
+			$this->reason = $rs->getString($startcol + 7);
+
+			$this->usage = $rs->getString($startcol + 8);
+
+			$this->confirm = $rs->getInt($startcol + 9);
+
+			$this->facebook_id = $rs->getString($startcol + 10);
+
+			$this->twitter_id = $rs->getString($startcol + 11);
+
+			$this->display = $rs->getInt($startcol + 12);
+
+			$this->created_at = $rs->getTimestamp($startcol + 13, null);
+
+			$this->updated_at = $rs->getTimestamp($startcol + 14, null);
+
+			$this->id = $rs->getInt($startcol + 15);
 
 			$this->resetModified();
 
 			$this->setNew(false);
 
-						return $startcol + 8; 
+						return $startcol + 16; 
 		} catch (Exception $e) {
 			throw new PropelException("Error populating User object", $e);
 		}
@@ -415,24 +649,48 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 				return $this->getName();
 				break;
 			case 1:
-				return $this->getEmail();
+				return $this->getKana();
 				break;
 			case 2:
-				return $this->getFacebookId();
+				return $this->getBirthday();
 				break;
 			case 3:
-				return $this->getTwitterId();
+				return $this->getGender();
 				break;
 			case 4:
-				return $this->getDisplay();
+				return $this->getEmail();
 				break;
 			case 5:
-				return $this->getCreatedAt();
+				return $this->getPhoneNumber();
 				break;
 			case 6:
-				return $this->getUpdatedAt();
+				return $this->getGroup();
 				break;
 			case 7:
+				return $this->getReason();
+				break;
+			case 8:
+				return $this->getUsage();
+				break;
+			case 9:
+				return $this->getConfirm();
+				break;
+			case 10:
+				return $this->getFacebookId();
+				break;
+			case 11:
+				return $this->getTwitterId();
+				break;
+			case 12:
+				return $this->getDisplay();
+				break;
+			case 13:
+				return $this->getCreatedAt();
+				break;
+			case 14:
+				return $this->getUpdatedAt();
+				break;
+			case 15:
 				return $this->getId();
 				break;
 			default:
@@ -446,13 +704,21 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 		$keys = UserPeer::getFieldNames($keyType);
 		$result = array(
 			$keys[0] => $this->getName(),
-			$keys[1] => $this->getEmail(),
-			$keys[2] => $this->getFacebookId(),
-			$keys[3] => $this->getTwitterId(),
-			$keys[4] => $this->getDisplay(),
-			$keys[5] => $this->getCreatedAt(),
-			$keys[6] => $this->getUpdatedAt(),
-			$keys[7] => $this->getId(),
+			$keys[1] => $this->getKana(),
+			$keys[2] => $this->getBirthday(),
+			$keys[3] => $this->getGender(),
+			$keys[4] => $this->getEmail(),
+			$keys[5] => $this->getPhoneNumber(),
+			$keys[6] => $this->getGroup(),
+			$keys[7] => $this->getReason(),
+			$keys[8] => $this->getUsage(),
+			$keys[9] => $this->getConfirm(),
+			$keys[10] => $this->getFacebookId(),
+			$keys[11] => $this->getTwitterId(),
+			$keys[12] => $this->getDisplay(),
+			$keys[13] => $this->getCreatedAt(),
+			$keys[14] => $this->getUpdatedAt(),
+			$keys[15] => $this->getId(),
 		);
 		return $result;
 	}
@@ -472,24 +738,48 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 				$this->setName($value);
 				break;
 			case 1:
-				$this->setEmail($value);
+				$this->setKana($value);
 				break;
 			case 2:
-				$this->setFacebookId($value);
+				$this->setBirthday($value);
 				break;
 			case 3:
-				$this->setTwitterId($value);
+				$this->setGender($value);
 				break;
 			case 4:
-				$this->setDisplay($value);
+				$this->setEmail($value);
 				break;
 			case 5:
-				$this->setCreatedAt($value);
+				$this->setPhoneNumber($value);
 				break;
 			case 6:
-				$this->setUpdatedAt($value);
+				$this->setGroup($value);
 				break;
 			case 7:
+				$this->setReason($value);
+				break;
+			case 8:
+				$this->setUsage($value);
+				break;
+			case 9:
+				$this->setConfirm($value);
+				break;
+			case 10:
+				$this->setFacebookId($value);
+				break;
+			case 11:
+				$this->setTwitterId($value);
+				break;
+			case 12:
+				$this->setDisplay($value);
+				break;
+			case 13:
+				$this->setCreatedAt($value);
+				break;
+			case 14:
+				$this->setUpdatedAt($value);
+				break;
+			case 15:
 				$this->setId($value);
 				break;
 		} 	}
@@ -500,13 +790,21 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 		$keys = UserPeer::getFieldNames($keyType);
 
 		if (array_key_exists($keys[0], $arr)) $this->setName($arr[$keys[0]]);
-		if (array_key_exists($keys[1], $arr)) $this->setEmail($arr[$keys[1]]);
-		if (array_key_exists($keys[2], $arr)) $this->setFacebookId($arr[$keys[2]]);
-		if (array_key_exists($keys[3], $arr)) $this->setTwitterId($arr[$keys[3]]);
-		if (array_key_exists($keys[4], $arr)) $this->setDisplay($arr[$keys[4]]);
-		if (array_key_exists($keys[5], $arr)) $this->setCreatedAt($arr[$keys[5]]);
-		if (array_key_exists($keys[6], $arr)) $this->setUpdatedAt($arr[$keys[6]]);
-		if (array_key_exists($keys[7], $arr)) $this->setId($arr[$keys[7]]);
+		if (array_key_exists($keys[1], $arr)) $this->setKana($arr[$keys[1]]);
+		if (array_key_exists($keys[2], $arr)) $this->setBirthday($arr[$keys[2]]);
+		if (array_key_exists($keys[3], $arr)) $this->setGender($arr[$keys[3]]);
+		if (array_key_exists($keys[4], $arr)) $this->setEmail($arr[$keys[4]]);
+		if (array_key_exists($keys[5], $arr)) $this->setPhoneNumber($arr[$keys[5]]);
+		if (array_key_exists($keys[6], $arr)) $this->setGroup($arr[$keys[6]]);
+		if (array_key_exists($keys[7], $arr)) $this->setReason($arr[$keys[7]]);
+		if (array_key_exists($keys[8], $arr)) $this->setUsage($arr[$keys[8]]);
+		if (array_key_exists($keys[9], $arr)) $this->setConfirm($arr[$keys[9]]);
+		if (array_key_exists($keys[10], $arr)) $this->setFacebookId($arr[$keys[10]]);
+		if (array_key_exists($keys[11], $arr)) $this->setTwitterId($arr[$keys[11]]);
+		if (array_key_exists($keys[12], $arr)) $this->setDisplay($arr[$keys[12]]);
+		if (array_key_exists($keys[13], $arr)) $this->setCreatedAt($arr[$keys[13]]);
+		if (array_key_exists($keys[14], $arr)) $this->setUpdatedAt($arr[$keys[14]]);
+		if (array_key_exists($keys[15], $arr)) $this->setId($arr[$keys[15]]);
 	}
 
 	
@@ -515,7 +813,15 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 		$criteria = new Criteria(UserPeer::DATABASE_NAME);
 
 		if ($this->isColumnModified(UserPeer::NAME)) $criteria->add(UserPeer::NAME, $this->name);
+		if ($this->isColumnModified(UserPeer::KANA)) $criteria->add(UserPeer::KANA, $this->kana);
+		if ($this->isColumnModified(UserPeer::BIRTHDAY)) $criteria->add(UserPeer::BIRTHDAY, $this->birthday);
+		if ($this->isColumnModified(UserPeer::GENDER)) $criteria->add(UserPeer::GENDER, $this->gender);
 		if ($this->isColumnModified(UserPeer::EMAIL)) $criteria->add(UserPeer::EMAIL, $this->email);
+		if ($this->isColumnModified(UserPeer::PHONE_NUMBER)) $criteria->add(UserPeer::PHONE_NUMBER, $this->phone_number);
+		if ($this->isColumnModified(UserPeer::GROUP)) $criteria->add(UserPeer::GROUP, $this->group);
+		if ($this->isColumnModified(UserPeer::REASON)) $criteria->add(UserPeer::REASON, $this->reason);
+		if ($this->isColumnModified(UserPeer::USAGE)) $criteria->add(UserPeer::USAGE, $this->usage);
+		if ($this->isColumnModified(UserPeer::CONFIRM)) $criteria->add(UserPeer::CONFIRM, $this->confirm);
 		if ($this->isColumnModified(UserPeer::FACEBOOK_ID)) $criteria->add(UserPeer::FACEBOOK_ID, $this->facebook_id);
 		if ($this->isColumnModified(UserPeer::TWITTER_ID)) $criteria->add(UserPeer::TWITTER_ID, $this->twitter_id);
 		if ($this->isColumnModified(UserPeer::DISPLAY)) $criteria->add(UserPeer::DISPLAY, $this->display);
@@ -554,7 +860,23 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 		$copyObj->setName($this->name);
 
+		$copyObj->setKana($this->kana);
+
+		$copyObj->setBirthday($this->birthday);
+
+		$copyObj->setGender($this->gender);
+
 		$copyObj->setEmail($this->email);
+
+		$copyObj->setPhoneNumber($this->phone_number);
+
+		$copyObj->setGroup($this->group);
+
+		$copyObj->setReason($this->reason);
+
+		$copyObj->setUsage($this->usage);
+
+		$copyObj->setConfirm($this->confirm);
 
 		$copyObj->setFacebookId($this->facebook_id);
 
