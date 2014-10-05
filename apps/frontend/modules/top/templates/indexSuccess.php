@@ -31,47 +31,61 @@
 
 <div class="about">
 	<div class="container">
-		<h2 class="about-top">
-			What is Progate Camp
-		</h2>
+		<h2 class="about-top">What is <span class="theme-color">P</span>rogate <span class="theme-color">C</span>amp</h2>
 		<div class="about-bottom">
-			<div class="about-image"><?php echo image_tag('progate_logo.png') ?></div>
+			<div class="about-image-wrapper">
+				<div class="about-image"><?php echo image_tag('progate_logo.png') ?></div>
+			</div>
 			<div class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.</div>
 		</div>
 	</div>
 </div>
 
 <div class="learn">
-	<div class="learn-top">学習内容</div>
-	<div class="learn-bottom">
-		<div class="learn-row">
-			<div class="learn-item">
-				<div class="item-top">HTML/CSS</div>
-				<div class="item-bottom"></div>
+	<div class="container">
+		<div class="learn-top"><span class="theme-color">学</span>習内容</div>
+		<div class="learn-bottom">
+			<div class="learn-row">
+				<div class="learn-item">
+					<div class="learn-item-inner">
+						<div class="item-top">HTML</div>
+						<div class="item-bottom"><?php echo image_tag('html.png') ?></div>
+					</div>
+				</div>
+				<div class="learn-item">
+					<div class="learn-item-inner">
+						<div class="item-top">CSS</div>
+						<div class="item-bottom"><?php echo image_tag('css.png') ?></div>
+					</div>
+				</div>
+				<div class="learn-item">
+					<div class="learn-item-inner">
+						<div class="item-top">PHP</div>
+						<div class="item-bottom"><?php echo image_tag('php.png') ?></div>
+					</div>
+				</div>
 			</div>
-			<div class="learn-item">
-				<div class="item-top">jquery</div>
-				<div class="item-bottom"></div>
-			</div>
-			<div class="learn-item">
-				<div class="item-top">git</div>
-				<div class="item-bottom"></div>
-			</div>
+			<div class="learn-row">
+				<div class="learn-item">
+					<div class="learn-item-inner">
+						<div class="item-top">jQuery</div>
+						<div class="item-bottom"><?php echo image_tag('jquery.png') ?></div>
+					</div>
+				</div>
+				<div class="learn-item">
+					<div class="learn-item-inner">
+						<div class="item-top">git</div>
+						<div class="item-bottom"><?php echo image_tag('github.png') ?></div>
+					</div>
+				</div>
+				<div class="learn-item">
+					<div class="learn-item-inner">
+						<div class="item-top">MySQL</div>
+						<div class="item-bottom"><?php echo image_tag('mysql.png') ?></div>
+					</div>
+				</div>
+			</div>	
 		</div>
-		<div class="learn-row">
-			<div class="learn-item">
-				<div class="item-top">PHP</div>
-				<div class="item-bottom"></div>
-			</div>
-			<div class="learn-item">
-				<div class="item-top">MySQL</div>
-				<div class="item-bottom"></div>
-			</div>
-			<div class="learn-item">
-				<div class="item-top">Linux</div>
-				<div class="item-bottom"></div>
-			</div>
-		</div>	
 	</div>
 </div>
 

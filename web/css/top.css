@@ -1,12 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200);
 
+@font-face{
+font-family: mplus;
+src: url('fonts/mplus-1p-light.ttf')
+     format("truetype");
+}
+
 body
 {
 	font-family: 'Source Sans Pro', 'Lucida Grande', sans-serif;
 }
 
 .theme-color
+{
+	color: #E7BB2F;
+}
+
+.theme-background-color
 {
 	color: #E7BB2F;
 }
@@ -59,12 +70,12 @@ body
 	list-style: none;
 	padding: 0 8px;
 	font-size: 17px;
-	color: #999;
+	color: #BBB;
 }
 
 .top
 {
-	padding-top: 67px;
+	padding-top: 75px;
 	color: white;
 }
 
@@ -84,7 +95,7 @@ body
 .title
 {
 	text-align: center;
-	font-size: 50px;
+	font-size: 55px;
 	margin: 8px;
 }
 
@@ -124,10 +135,12 @@ body
 .about-top
 {
 	text-align: center;
-	font-size: 28px;
+	font-size: 35px;
+	padding: 10px 0;
 }
 
-.about-top:after
+.about-top:after,
+.learn-top:after
 {
 	background: #CDD7E0;
 	content: '';
@@ -146,11 +159,16 @@ body
 	-webkit-box-shadow: 0 0 3px #000;
 	-moz-box-shadow: 0 0 3px #000;
 	box-shadow: 0 0 3px #000;
-	float: left;
-	margin-left: .5%;
 	padding: 10px;
-	width: 35%;
+	width: 70%;
+	margin: auto;
 	box-sizing: border-box;
+}
+
+.about-image-wrapper
+{
+	width: 50%;
+	float: left;
 }
 
 .about-image img
@@ -166,12 +184,71 @@ body
 	min-height: 1px;
 	padding-left: 15px;
 	padding-right: 15px;
+	padding-top: 20px;
 	box-sizing: border-box;
 }
+
+/*learn*/
 
 .learn
 {
 	clear: both;
+	padding-top: 50px;
+}
+
+.learn-top
+{
+	text-align: center;
+	font-size: 35px;
+	padding: 10px 0;
+}
+
+.learn-bottom
+{
+	width: 900px;
+	margin: 0 auto;
+}
+
+.learn-row
+{
+	clear: both;
+	height: 200px;
+}
+
+.learn-item
+{
+	float: left;
+	width: 33%;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 10px;
+	color: white;
+}
+
+.learn-item-inner
+{
+	background-color: rgba(231, 187, 47, 0.5);
+	height: 200px;
+	padding: 30px;
+}
+
+.item-top
+{
+	font-size: 40px;
+	padding-bottom: 20px;
+}
+
+.item-bottom img
+{
+	width: 60%;
+}
+
+/*info*/
+
+.info
+{
+	clear: both;
+	padding-top: 50px;
 }
 
 .schedule
