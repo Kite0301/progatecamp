@@ -131,24 +131,49 @@
 
 <div class="schedule">
 	<div class="schedule-item">
-		<div class="schedule-item-title">week0 - 事前学習</div>
-		<div class="schedule-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </div>
+		<div class="schedule-item-title">
+			<h5>week0 - 事前学習</h5>
+		</div>
+		<div class="schedule-item-text">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
+			<span></span>
+		</div>
 	</div>
 	<div class="schedule-item">
-		<div class="schedule-item-title">week1 -</div>
-		<div class="schedule-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </div>
+		<div class="schedule-item-title">
+			<h5>week1 -</h5>
+		</div>
+		<div class="schedule-item-text">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
+			<span></span>
+		</div>
 	</div>
 	<div class="schedule-item">
-		<div class="schedule-item-title">week2</div>
-		<div class="schedule-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </div>
+		<div class="schedule-item-title">
+			<h5>week2</h5>
+		</div>
+		<div class="schedule-item-text">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
+			<span></span>
+		</div>
 	</div>
 	<div class="schedule-item">
-		<div class="schedule-item-title">week3</div>
-		<div class="schedule-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </div>
+		<div class="schedule-item-title">
+			<h5>week3</h5>
+		</div>
+		<div class="schedule-item-text">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
+			<span></span>
+		</div>
 	</div>
 	<div class="schedule-item">
-		<div class="schedule-item-title">week4</div>
-		<div class="schedule-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </div>
+		<div class="schedule-item-title">
+			<h5>week4</h5>
+		</div>
+		<div class="schedule-item-text">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
+			<span></span>
+		</div>
 	</div>
 </div>
 
