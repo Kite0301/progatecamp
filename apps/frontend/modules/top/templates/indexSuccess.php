@@ -179,15 +179,15 @@
 
 <div class="entry">
 	<?php echo form_tag('user/confirm') ?>
-	<div class="entry-top"></div>
+	<div class="entry-top">the Camp #1 - ENTRY</div>
 	<div class="entry-bottom">
 		<div class="entry-item">
 			<div class="entry-title">氏名</div>
-			<div class="entry-input"><?php echo input_tag('name', '', array('placeholder' => '氏名')) ?></div>
+			<div class="entry-input"><?php echo input_tag('name', '', array('placeholder' => '氏名', 'class' => 'form-control')) ?></div>
 		</div>
 		<div class="entry-item">
 			<div class="entry-title">カナ</div>
-			<div class="entry-input"><?php echo input_tag('kana','', array('placeholder' => 'カナ'))?></div>
+			<div class="entry-input"><?php echo input_tag('kana','', array('placeholder' => 'カナ', 'class' => 'form-control'))?></div>
 		</div>
 		<div class="entry-item">
 			<div class="entry-title">生年月日</div>
@@ -199,23 +199,23 @@
 		</div>
 		<div class="entry-item">
 			<div class="entry-title">email</div>
-			<div class="entry-input"><?php echo input_tag('email','', array('placeholder' => '連絡のとりやすいアドレスを入力してください。'))?></div>
+			<div class="entry-input"><?php echo input_tag('email','', array('placeholder' => '連絡のとりやすいアドレスを入力してください。', 'class' => 'form-control'))?></div>
 		</div>
 		<div class="entry-item">
 			<div class="entry-title">電話番号</div>
-			<div class="entry-input"><?php echo input_tag('phone_number','', array('placeholder' => '連絡のとりやすい電話番号を入力してください。'))?></div>
+			<div class="entry-input"><?php echo input_tag('phone_number','', array('placeholder' => '連絡のとりやすい電話番号を入力してください。', 'class' => 'form-control'))?></div>
 		</div>
 		<div class="entry-item">
 			<div class="entry-title">所属</div>
-			<div class="entry-input"><?php echo input_tag('group','', array('placeholder' => '職業、もしくは学校名等を入力してください。'))?></div>
+			<div class="entry-input"><?php echo input_tag('group','', array('placeholder' => '職業、もしくは学校名等を入力してください。', 'class' => 'form-control'))?></div>
 		</div>
-		<div class="entry-item">
-			<div class="entry-title">申し込み理由</div>
-			<div class="entry-input"><?php echo textarea_tag('reason','', array('placeholder' => '（400字以内。申込者多数の場合、この内容を参考に致します）'))?></div>
+		<div class="entry-item-long">
+			<div class="entry-title-long">申し込み理由</div>
+			<div class="entry-input-long"><?php echo textarea_tag('reason','', array('placeholder' => '（400字以内。申込者多数の場合、この内容を参考に致します）', 'class' => 'form-control'))?></div>
 		</div>
-		<div class="entry-item">
-			<div class="entry-title">今後プログラミングをどう活かしていきたいと考えていますか？（任意）</div>
-			<div class="entry-input"><?php echo textarea_tag('usage','', array('placeholder' => '400字以内。スタッフとの相談会の際に参考にさせて頂きます。）'))?></div>
+		<div class="entry-item-long">
+			<div class="entry-title-long">今後プログラミングをどう活かしていきたいと考えていますか？（任意）</div>
+			<div class="entry-input-long"><?php echo textarea_tag('usage','', array('placeholder' => '400字以内。スタッフとの相談会の際に参考にさせて頂きます。）', 'class' => 'form-control'))?></div>
 		</div>
 		<div class="entry-item">
 			<div class="entry-title">参加条件</div>
