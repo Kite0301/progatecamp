@@ -3,7 +3,7 @@ default:
     content-type: text/html
 
   metas:
-    title:        progate camp
+    title:        Progate Camp
     robots:       index, follow
     description:  symfony project
     keywords:     symfony, project
