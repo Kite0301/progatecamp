@@ -24,7 +24,8 @@ class userActions extends sfActions
   	$user = new User();
   	$user->setName($this->getRequestParameter('name'));
   	$user->setKana($this->getRequestParameter('kana'));
-  	$user->setBirthday($this->getRequestParameter('birthday'));
+  	$birthday = $this->getRequestParameter('year').'-'.$this->getRequestParameter('month').'-'.$this->getRequestParameter('day');
+    $user->setBirthday($birthday);
   	$user->setGender($this->getRequestParameter('gender'));
   	$user->setEmail($this->getRequestParameter('email'));
   	$user->setPhoneNumber($this->getRequestParameter('phone_number'));
@@ -34,5 +35,10 @@ class userActions extends sfActions
   	$user->save();
 
   	$this->user = $user;
+  }
+
+  public function handleErrorConfirm()
+  {
+    return $this->forward('top', 'index');
   }
 }

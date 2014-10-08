@@ -1,0 +1,47 @@
+fillin:
+  enabled: true  # フォームの再投入を有効にする
+
+methods:
+  post: [name, kana, email, phone_number, gender, group, reason]
+
+names:
+  name:
+    required: true
+    required_msg: ・名前を入力してください
+
+  kana:
+    required: true
+    required_msg: ・カナを入力してください
+
+  email:
+    required: true
+    required_msg: ・メールアドレスを入力してください
+    validators: emailValidator
+
+  phone_number:
+    required: true
+    required_msg: ・電話番号を入力してください
+    validators: phoneNumberValidator
+
+  gender:
+    required: true
+    required_msg: ・性別を選んでください
+
+  group:
+    required: true
+    required_msg: ・所属を入力してください
+
+  reason:
+    required: true
+    required_msg: ・申し込み理由を入力してください
+
+emailValidator:
+    class: sfEmailValidator
+    strict: true
+    param:
+      email_error: ・このメールアドレスは無効です
+
+phoneNumberValidator:
+    class: sfNumberValidator
+    param:
+      nan_error:  ・数字のみを入力してください (例:09012345678)

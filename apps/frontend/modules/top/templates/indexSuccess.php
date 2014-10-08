@@ -1,3 +1,5 @@
+<?php use_helper('Validation', 'Object', 'DateForm') ?>
+
 <div class="header">
 	<div class="container">
 		<div class="header-logo theme-color">
@@ -219,8 +221,28 @@
 <div id="schedule" class="schedule">
 	<div class="schedule-top"><span class="theme-color">S</span>chedule</div>
 	<div class="schedule-item">
-		<div class="schedule-item-title">
-			<h5>week 0</h5>
+		<div class="schedule-week">
+			<div>０週目</div>
+		</div>
+		<div class="schedule-item-text">
+			<div class="schedule-title">ProgateでHTMLとPHPを覚えよう！</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
+			<span></span>
+		</div>
+	</div>
+	<div class="schedule-item">
+		<div class="schedule-week">
+			<div>１週目</div>
+		</div>
+		<div class="schedule-item-text">
+			<div class="schedule-title">Gitでバージョン管理をしよう！</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
+			<span></span>
+		</div>
+	</div>
+	<div class="schedule-item">
+		<div class="schedule-week">
+			<div>２週目</div>
 		</div>
 		<div class="schedule-item-text">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
@@ -228,8 +250,8 @@
 		</div>
 	</div>
 	<div class="schedule-item">
-		<div class="schedule-item-title">
-			<h5>week 1</h5>
+		<div class="schedule-week">
+			<div>３週目</div>
 		</div>
 		<div class="schedule-item-text">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
@@ -237,26 +259,8 @@
 		</div>
 	</div>
 	<div class="schedule-item">
-		<div class="schedule-item-title">
-			<h5>week 2</h5>
-		</div>
-		<div class="schedule-item-text">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
-			<span></span>
-		</div>
-	</div>
-	<div class="schedule-item">
-		<div class="schedule-item-title">
-			<h5>week 3</h5>
-		</div>
-		<div class="schedule-item-text">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
-			<span></span>
-		</div>
-	</div>
-	<div class="schedule-item">
-		<div class="schedule-item-title">
-			<h5>week 4</h5>
+		<div class="schedule-week">
+			<div>４週目</div>
 		</div>
 		<div class="schedule-item-text">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
@@ -269,53 +273,91 @@
 	<?php echo form_tag('user/confirm') ?>
 	<div class="entry-top"><span class="theme-color">第</span>一回キャンプ　<span class="theme-color">申</span>し込み</div>
 	<div class="entry-bottom">
+
 		<div class="entry-item">
 			<div class="entry-title">氏名</div>
-			<div class="entry-input"><?php echo input_tag('name', '', array('placeholder' => '氏名', 'class' => 'form-control')) ?></div>
+			<?php echo form_error('name') ?>
+			<div class="entry-input form-group"><?php echo input_tag('name', '', array('placeholder' => '氏名', 'class' => 'form-control')) ?></div>
 		</div>
 		<div class="entry-item">
 			<div class="entry-title">カナ</div>
-			<div class="entry-input"><?php echo input_tag('kana','', array('placeholder' => 'カナ', 'class' => 'form-control'))?></div>
+			<?php echo form_error('kana') ?>
+			<div class="entry-input form-group"><?php echo input_tag('kana','', array('placeholder' => 'カナ', 'class' => 'form-control'))?></div>
 		</div>
 		<div class="entry-item">
 			<div class="entry-title">生年月日</div>
-			<div class="entry-input"></div>
+			<div class="entry-input form-group">
+				<?php echo select_year_tag('year', '1980', array('year_start' => date('Y'), 'year_end' => '1910')) ?>年
+				<?php echo select_month_tag('month', '1', array('use_month_numbers'=>true)) ?>月
+				<?php echo select_day_tag('day', '1') ?>日
+			</div>
 		</div>
 		<div class="entry-item">
 			<div class="entry-title">性別</div>
-			<div class="entry-input"></div>
+			<?php echo form_error('gender') ?>
+			<div class="entry-input form-group">
+				<label class="radio-inline"><?php echo radiobutton_tag('gender', '男性') ?>男性</label>
+				<label class="radio-inline"><?php echo radiobutton_tag('gender', '女性') ?>女性</label>
+			</div>
 		</div>
 		<div class="entry-item">
 			<div class="entry-title">email</div>
-			<div class="entry-input"><?php echo input_tag('email','', array('placeholder' => '連絡のとりやすいアドレスを入力してください。', 'class' => 'form-control'))?></div>
+			<?php echo form_error('email') ?>
+			<div class="entry-input form-group"><?php echo input_tag('email','', array('placeholder' => '連絡のとりやすいアドレスを入力してください。', 'class' => 'form-control'))?></div>
 		</div>
 		<div class="entry-item">
 			<div class="entry-title">電話番号</div>
-			<div class="entry-input"><?php echo input_tag('phone_number','', array('placeholder' => '連絡のとりやすい電話番号を入力してください。', 'class' => 'form-control'))?></div>
+			<?php echo form_error('phone_number') ?>
+			<div class="entry-input form-group"><?php echo input_tag('phone_number','', array('placeholder' => '連絡のとりやすい電話番号を入力してください。', 'class' => 'form-control'))?></div>
 		</div>
 		<div class="entry-item">
 			<div class="entry-title">所属</div>
-			<div class="entry-input"><?php echo input_tag('group','', array('placeholder' => '職業、もしくは学校名等を入力してください。', 'class' => 'form-control'))?></div>
+			<?php echo form_error('group') ?>
+			<div class="entry-input form-group"><?php echo input_tag('group','', array('placeholder' => '職業、もしくは学校名等を入力してください。', 'class' => 'form-control'))?></div>
 		</div>
-		<div class="entry-item-long">
-			<div class="entry-title-long">申し込み理由</div>
-			<div class="entry-input-long"><?php echo textarea_tag('reason','', array('placeholder' => '（400字以内。申込者多数の場合、この内容を参考に致します）', 'class' => 'form-control'))?></div>
+		<div class="entry-item">
+			<div class="entry-title">申し込み理由</div>
+			<?php echo form_error('reason') ?>
+			<div class="entry-input form-group-long"><?php echo textarea_tag('reason','', array('placeholder' => '（400字以内。申込者多数の場合、この内容を参考に致します）', 'class' => 'form-control'))?></div>
 		</div>
-		<div class="entry-item-long">
-			<div class="entry-title-long">今後プログラミングをどう活かしていきたいと考えていますか？（任意）</div>
-			<div class="entry-input-long"><?php echo textarea_tag('usage','', array('placeholder' => '400字以内。スタッフとの相談会の際に参考にさせて頂きます。）', 'class' => 'form-control'))?></div>
+		<div class="entry-item">
+			<div class="entry-title">今後プログラミングをどう活かしていきたいと考えていますか？（任意）</div>
+			<div class="entry-input form-group-long"><?php echo textarea_tag('usage','', array('placeholder' => '（400字以内。スタッフとの相談会の際に参考にさせて頂きます。）', 'class' => 'form-control'))?></div>
 		</div>
 		<div class="entry-item">
 			<div class="entry-title">参加条件</div>
-			<div class="entry-input"></div>
+			<div id="entry-checkbox" class="entry-input form-group">
+				<label>
+					<?php echo checkbox_tag('first', 1, false) ?>
+					<div class="entry-checkbox">パソコンを持参します。</div>
+				</label>
+				<label>
+					<?php echo checkbox_tag('second', 1, false) ?>
+					<div class="entry-checkbox">事前に渡される課題をこなします。</div>
+				</label>
+				<label>
+					<?php echo checkbox_tag('third', 1, false) ?>
+					<div class="entry-checkbox">毎週土曜日の講義に出席できます。</div>
+				</label>
+			</div>
 		</div>
 		<div class="entry-submit">
-			<?php echo submit_tag('申し込み確認画面に進む。') ?>
+			<button id="submit" type="submit" class="register-btn">申し込む</button>
 		</div>
 	</div>
 </div>
 
-<div class="footer"></div>
+<footer id="top-footer">
+	<div class="row">
+		<div class="top-footer-title">Progate Camp</div>
+		<div class="top-like-box">
+			<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FProgate%2F742679992421539&amp;width=380&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=80&amp;appId=296639803850370" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:380px; height:80px;" allowTransparency="true"></iframe>
+		</div>
+		<nav class="top-footer-menu">
+			<div class="footer-menu-item">© 2014 Progate</div>
+		</nav>
+	</div>
+</footer>
 
 <script>
 
@@ -328,6 +370,20 @@ $(function() {
 			$(this).children('.item-cover').fadeOut();
 		}
 		);
+	});
+
+	$('#submit').click(function(event) {
+		var $checkbox = $('#entry-checkbox').find('input[type="checkbox"]');
+		
+		for (var i = 0; i < 3; i++)
+		{
+			if (!$checkbox.eq(i).attr("checked"))
+			{
+				window.alert('すべての項目にチェックしていただけないと申し込みできません。');
+				event.preventDefault();
+				break;
+			}
+		}
 	});
 
 </script>

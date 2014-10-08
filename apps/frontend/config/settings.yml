@@ -23,7 +23,7 @@ all:
     # Cache settings
     lazy_cache_key:         on        # Delays creation of a cache key until after checking whether an action or partial is cacheable
 
-#all:
+all:
 #  .actions:
 #    default_module:         default   # Default module and action to be called when
 #    default_action:         index     # A routing rule doesn't set it
@@ -43,7 +43,7 @@ all:
 #    unavailable_module:     default   # To be called when a user requests a page
 #    unavailable_action:  unavailable  # From an application disabled via the available setting below
 #
-#  .settings:
+  .settings:
 #    available:              on        # Enable the whole application. Switch to off to redirect all requests to the unavailable module and action.
 #
 #    # Optional features. Deactivating unused features boots performance a bit.
@@ -65,8 +65,8 @@ all:
 #    no_script_name:         off       # Enable the front controller name in generated URLs
 #
 #    # Validation settings, used for error generation by the Validation helper
-#    validation_error_prefix:    ' &darr;&nbsp;'
-#    validation_error_suffix:    ' &nbsp;&darr;'
+    validation_error_prefix:    ''
+    validation_error_suffix:    ''
 #    validation_error_class:     form_error
 #    validation_error_id_prefix: error_for_
 #
