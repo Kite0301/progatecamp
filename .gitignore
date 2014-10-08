@@ -4,6 +4,7 @@ config/*
 !schema.yml
 test/*
 data/sql/*
+<<<<<<< HEAD
 web/lessons/html/*
 !web/lessons/html/ja_JP/
 !web/lessons/html/en_US
@@ -18,3 +19,8 @@ web/.htaccess
 .tags
 lib/vendor/hybridauth/config.php
 web/uploads/*
+=======
+.DS_Store
+web/.htaccess
+.tags
+>>>>>>> b2765120db754523bb8557b69dc3989ec84cb957
