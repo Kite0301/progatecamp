@@ -33,7 +33,7 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 
 	
-	protected $group;
+	protected $background;
 
 
 	
@@ -41,7 +41,7 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 
 	
-	protected $usage;
+	protected $prospect;
 
 
 	
@@ -135,10 +135,10 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 	}
 
 	
-	public function getGroup()
+	public function getBackground()
 	{
 
-		return $this->group;
+		return $this->background;
 	}
 
 	
@@ -149,10 +149,10 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 	}
 
 	
-	public function getUsage()
+	public function getProspect()
 	{
 
-		return $this->usage;
+		return $this->prospect;
 	}
 
 	
@@ -322,16 +322,16 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 	} 
 	
-	public function setGroup($v)
+	public function setBackground($v)
 	{
 
 						if ($v !== null && !is_string($v)) {
 			$v = (string) $v; 
 		}
 
-		if ($this->group !== $v) {
-			$this->group = $v;
-			$this->modifiedColumns[] = UserPeer::GROUP;
+		if ($this->background !== $v) {
+			$this->background = $v;
+			$this->modifiedColumns[] = UserPeer::BACKGROUND;
 		}
 
 	} 
@@ -350,16 +350,16 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 	} 
 	
-	public function setUsage($v)
+	public function setProspect($v)
 	{
 
 						if ($v !== null && !is_string($v)) {
 			$v = (string) $v; 
 		}
 
-		if ($this->usage !== $v) {
-			$this->usage = $v;
-			$this->modifiedColumns[] = UserPeer::USAGE;
+		if ($this->prospect !== $v) {
+			$this->prospect = $v;
+			$this->modifiedColumns[] = UserPeer::PROSPECT;
 		}
 
 	} 
@@ -484,11 +484,11 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 			$this->phone_number = $rs->getString($startcol + 5);
 
-			$this->group = $rs->getString($startcol + 6);
+			$this->background = $rs->getString($startcol + 6);
 
 			$this->reason = $rs->getString($startcol + 7);
 
-			$this->usage = $rs->getString($startcol + 8);
+			$this->prospect = $rs->getString($startcol + 8);
 
 			$this->confirm = $rs->getInt($startcol + 9);
 
@@ -664,13 +664,13 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 				return $this->getPhoneNumber();
 				break;
 			case 6:
-				return $this->getGroup();
+				return $this->getBackground();
 				break;
 			case 7:
 				return $this->getReason();
 				break;
 			case 8:
-				return $this->getUsage();
+				return $this->getProspect();
 				break;
 			case 9:
 				return $this->getConfirm();
@@ -709,9 +709,9 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 			$keys[3] => $this->getGender(),
 			$keys[4] => $this->getEmail(),
 			$keys[5] => $this->getPhoneNumber(),
-			$keys[6] => $this->getGroup(),
+			$keys[6] => $this->getBackground(),
 			$keys[7] => $this->getReason(),
-			$keys[8] => $this->getUsage(),
+			$keys[8] => $this->getProspect(),
 			$keys[9] => $this->getConfirm(),
 			$keys[10] => $this->getFacebookId(),
 			$keys[11] => $this->getTwitterId(),
@@ -753,13 +753,13 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 				$this->setPhoneNumber($value);
 				break;
 			case 6:
-				$this->setGroup($value);
+				$this->setBackground($value);
 				break;
 			case 7:
 				$this->setReason($value);
 				break;
 			case 8:
-				$this->setUsage($value);
+				$this->setProspect($value);
 				break;
 			case 9:
 				$this->setConfirm($value);
@@ -795,9 +795,9 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 		if (array_key_exists($keys[3], $arr)) $this->setGender($arr[$keys[3]]);
 		if (array_key_exists($keys[4], $arr)) $this->setEmail($arr[$keys[4]]);
 		if (array_key_exists($keys[5], $arr)) $this->setPhoneNumber($arr[$keys[5]]);
-		if (array_key_exists($keys[6], $arr)) $this->setGroup($arr[$keys[6]]);
+		if (array_key_exists($keys[6], $arr)) $this->setBackground($arr[$keys[6]]);
 		if (array_key_exists($keys[7], $arr)) $this->setReason($arr[$keys[7]]);
-		if (array_key_exists($keys[8], $arr)) $this->setUsage($arr[$keys[8]]);
+		if (array_key_exists($keys[8], $arr)) $this->setProspect($arr[$keys[8]]);
 		if (array_key_exists($keys[9], $arr)) $this->setConfirm($arr[$keys[9]]);
 		if (array_key_exists($keys[10], $arr)) $this->setFacebookId($arr[$keys[10]]);
 		if (array_key_exists($keys[11], $arr)) $this->setTwitterId($arr[$keys[11]]);
@@ -818,9 +818,9 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 		if ($this->isColumnModified(UserPeer::GENDER)) $criteria->add(UserPeer::GENDER, $this->gender);
 		if ($this->isColumnModified(UserPeer::EMAIL)) $criteria->add(UserPeer::EMAIL, $this->email);
 		if ($this->isColumnModified(UserPeer::PHONE_NUMBER)) $criteria->add(UserPeer::PHONE_NUMBER, $this->phone_number);
-		if ($this->isColumnModified(UserPeer::GROUP)) $criteria->add(UserPeer::GROUP, $this->group);
+		if ($this->isColumnModified(UserPeer::BACKGROUND)) $criteria->add(UserPeer::BACKGROUND, $this->background);
 		if ($this->isColumnModified(UserPeer::REASON)) $criteria->add(UserPeer::REASON, $this->reason);
-		if ($this->isColumnModified(UserPeer::USAGE)) $criteria->add(UserPeer::USAGE, $this->usage);
+		if ($this->isColumnModified(UserPeer::PROSPECT)) $criteria->add(UserPeer::PROSPECT, $this->prospect);
 		if ($this->isColumnModified(UserPeer::CONFIRM)) $criteria->add(UserPeer::CONFIRM, $this->confirm);
 		if ($this->isColumnModified(UserPeer::FACEBOOK_ID)) $criteria->add(UserPeer::FACEBOOK_ID, $this->facebook_id);
 		if ($this->isColumnModified(UserPeer::TWITTER_ID)) $criteria->add(UserPeer::TWITTER_ID, $this->twitter_id);
@@ -870,11 +870,11 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 		$copyObj->setPhoneNumber($this->phone_number);
 
-		$copyObj->setGroup($this->group);
+		$copyObj->setBackground($this->background);
 
 		$copyObj->setReason($this->reason);
 
-		$copyObj->setUsage($this->usage);
+		$copyObj->setProspect($this->prospect);
 
 		$copyObj->setConfirm($this->confirm);
 

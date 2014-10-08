@@ -1,20 +1,5 @@
 <?php use_helper('Validation', 'Object', 'DateForm') ?>
 
-<div class="header">
-	<div class="container">
-		<div class="header-logo theme-color">
-			<h2>PROGATE CAMP</h2>
-		</div>
-		<div class="header-navi">
-			<ul class="navi-item">
-				<li><?php echo link_to('About', '#about') ?></li>
-				<li><?php echo link_to('特徴', '#about') ?></li>
-				<li><?php echo link_to('Schedule', '#schedule') ?></li>
-				<li><?php echo link_to('申し込み', '#entry') ?></li>
-		</div>
-	</div>
-</div>
-
 <div class="top">
 	<div class="top-background">
 		<div class="top-title">
@@ -312,8 +297,8 @@
 		</div>
 		<div class="entry-item">
 			<div class="entry-title">所属</div>
-			<?php echo form_error('group') ?>
-			<div class="entry-input form-group"><?php echo input_tag('group','', array('placeholder' => '職業、もしくは学校名等を入力してください。', 'class' => 'form-control'))?></div>
+			<?php echo form_error('background') ?>
+			<div class="entry-input form-group"><?php echo input_tag('background','', array('placeholder' => '職業、もしくは学校名等を入力してください。', 'class' => 'form-control'))?></div>
 		</div>
 		<div class="entry-item">
 			<div class="entry-title">申し込み理由</div>
@@ -322,7 +307,7 @@
 		</div>
 		<div class="entry-item">
 			<div class="entry-title">今後プログラミングをどう活かしていきたいと考えていますか？（任意）</div>
-			<div class="entry-input form-group-long"><?php echo textarea_tag('usage','', array('placeholder' => '（400字以内。スタッフとの相談会の際に参考にさせて頂きます。）', 'class' => 'form-control'))?></div>
+			<div class="entry-input form-group-long"><?php echo textarea_tag('prospect','', array('placeholder' => '（400字以内。スタッフとの相談会の際に参考にさせて頂きます。）', 'class' => 'form-control'))?></div>
 		</div>
 		<div class="entry-item">
 			<div class="entry-title">参加条件</div>
@@ -346,18 +331,6 @@
 		</div>
 	</div>
 </div>
-
-<footer id="top-footer">
-	<div class="row">
-		<div class="top-footer-title">Progate Camp</div>
-		<div class="top-like-box">
-			<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FProgate%2F742679992421539&amp;width=380&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=80&amp;appId=296639803850370" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:380px; height:80px;" allowTransparency="true"></iframe>
-		</div>
-		<nav class="top-footer-menu">
-			<div class="footer-menu-item">© 2014 Progate</div>
-		</nav>
-	</div>
-</footer>
 
 <script>
 

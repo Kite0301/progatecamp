@@ -14,10 +14,6 @@ class userActions extends sfActions
    * Executes index action
    *
    */
-  public function executeIndex()
-  {
-    $this->forward('default', 'module');
-  }
 
   public function executeConfirm()
   {
@@ -29,9 +25,9 @@ class userActions extends sfActions
   	$user->setGender($this->getRequestParameter('gender'));
   	$user->setEmail($this->getRequestParameter('email'));
   	$user->setPhoneNumber($this->getRequestParameter('phone_number'));
-  	// $user->setGroup($this->getRequestParameter('group'));
-  	// $user->setReason($this->getRequestParameter('reason'));
-  	// $user->setUsage($this->getRequestParameter('usage'));
+  	$user->setBackground($this->getRequestParameter('background'));
+  	$user->setReason($this->getRequestParameter('reason'));
+  	$user->setProspect($this->getRequestParameter('prospect'));
   	$user->save();
 
   	$this->user = $user;

@@ -2,7 +2,7 @@ fillin:
   enabled: true  # フォームの再投入を有効にする
 
 methods:
-  post: [name, kana, email, phone_number, gender, group, reason]
+  post: [name, kana, email, phone_number, gender, background, reason]
 
 names:
   name:
@@ -27,7 +27,7 @@ names:
     required: true
     required_msg: ・性別を選んでください
 
-  group:
+  background:
     required: true
     required_msg: ・所属を入力してください
 

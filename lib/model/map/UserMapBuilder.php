@@ -44,11 +44,11 @@ class UserMapBuilder {
 
 		$tMap->addColumn('PHONE_NUMBER', 'PhoneNumber', 'string', CreoleTypes::VARCHAR, false, 20);
 
-		$tMap->addColumn('GROUP', 'Group', 'string', CreoleTypes::VARCHAR, false, 60);
+		$tMap->addColumn('BACKGROUND', 'Background', 'string', CreoleTypes::VARCHAR, false, 60);
 
 		$tMap->addColumn('REASON', 'Reason', 'string', CreoleTypes::LONGVARCHAR, false, null);
 
-		$tMap->addColumn('USAGE', 'Usage', 'string', CreoleTypes::LONGVARCHAR, false, null);
+		$tMap->addColumn('PROSPECT', 'Prospect', 'string', CreoleTypes::LONGVARCHAR, false, null);
 
 		$tMap->addColumn('CONFIRM', 'Confirm', 'int', CreoleTypes::INTEGER, false, null);
 

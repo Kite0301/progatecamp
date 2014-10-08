@@ -38,13 +38,13 @@ abstract class BaseUserPeer {
 	const PHONE_NUMBER = 'user.PHONE_NUMBER';
 
 	
-	const GROUP = 'user.GROUP';
+	const BACKGROUND = 'user.BACKGROUND';
 
 	
 	const REASON = 'user.REASON';
 
 	
-	const USAGE = 'user.USAGE';
+	const PROSPECT = 'user.PROSPECT';
 
 	
 	const CONFIRM = 'user.CONFIRM';
@@ -73,17 +73,17 @@ abstract class BaseUserPeer {
 
 	
 	private static $fieldNames = array (
-		BasePeer::TYPE_PHPNAME => array ('Name', 'Kana', 'Birthday', 'Gender', 'Email', 'PhoneNumber', 'Group', 'Reason', 'Usage', 'Confirm', 'FacebookId', 'TwitterId', 'Display', 'CreatedAt', 'UpdatedAt', 'Id', ),
-		BasePeer::TYPE_COLNAME => array (UserPeer::NAME, UserPeer::KANA, UserPeer::BIRTHDAY, UserPeer::GENDER, UserPeer::EMAIL, UserPeer::PHONE_NUMBER, UserPeer::GROUP, UserPeer::REASON, UserPeer::USAGE, UserPeer::CONFIRM, UserPeer::FACEBOOK_ID, UserPeer::TWITTER_ID, UserPeer::DISPLAY, UserPeer::CREATED_AT, UserPeer::UPDATED_AT, UserPeer::ID, ),
-		BasePeer::TYPE_FIELDNAME => array ('name', 'kana', 'birthday', 'gender', 'email', 'phone_number', 'group', 'reason', 'usage', 'confirm', 'facebook_id', 'twitter_id', 'display', 'created_at', 'updated_at', 'id', ),
+		BasePeer::TYPE_PHPNAME => array ('Name', 'Kana', 'Birthday', 'Gender', 'Email', 'PhoneNumber', 'Background', 'Reason', 'Prospect', 'Confirm', 'FacebookId', 'TwitterId', 'Display', 'CreatedAt', 'UpdatedAt', 'Id', ),
+		BasePeer::TYPE_COLNAME => array (UserPeer::NAME, UserPeer::KANA, UserPeer::BIRTHDAY, UserPeer::GENDER, UserPeer::EMAIL, UserPeer::PHONE_NUMBER, UserPeer::BACKGROUND, UserPeer::REASON, UserPeer::PROSPECT, UserPeer::CONFIRM, UserPeer::FACEBOOK_ID, UserPeer::TWITTER_ID, UserPeer::DISPLAY, UserPeer::CREATED_AT, UserPeer::UPDATED_AT, UserPeer::ID, ),
+		BasePeer::TYPE_FIELDNAME => array ('name', 'kana', 'birthday', 'gender', 'email', 'phone_number', 'background', 'reason', 'prospect', 'confirm', 'facebook_id', 'twitter_id', 'display', 'created_at', 'updated_at', 'id', ),
 		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, )
 	);
 
 	
 	private static $fieldKeys = array (
-		BasePeer::TYPE_PHPNAME => array ('Name' => 0, 'Kana' => 1, 'Birthday' => 2, 'Gender' => 3, 'Email' => 4, 'PhoneNumber' => 5, 'Group' => 6, 'Reason' => 7, 'Usage' => 8, 'Confirm' => 9, 'FacebookId' => 10, 'TwitterId' => 11, 'Display' => 12, 'CreatedAt' => 13, 'UpdatedAt' => 14, 'Id' => 15, ),
-		BasePeer::TYPE_COLNAME => array (UserPeer::NAME => 0, UserPeer::KANA => 1, UserPeer::BIRTHDAY => 2, UserPeer::GENDER => 3, UserPeer::EMAIL => 4, UserPeer::PHONE_NUMBER => 5, UserPeer::GROUP => 6, UserPeer::REASON => 7, UserPeer::USAGE => 8, UserPeer::CONFIRM => 9, UserPeer::FACEBOOK_ID => 10, UserPeer::TWITTER_ID => 11, UserPeer::DISPLAY => 12, UserPeer::CREATED_AT => 13, UserPeer::UPDATED_AT => 14, UserPeer::ID => 15, ),
-		BasePeer::TYPE_FIELDNAME => array ('name' => 0, 'kana' => 1, 'birthday' => 2, 'gender' => 3, 'email' => 4, 'phone_number' => 5, 'group' => 6, 'reason' => 7, 'usage' => 8, 'confirm' => 9, 'facebook_id' => 10, 'twitter_id' => 11, 'display' => 12, 'created_at' => 13, 'updated_at' => 14, 'id' => 15, ),
+		BasePeer::TYPE_PHPNAME => array ('Name' => 0, 'Kana' => 1, 'Birthday' => 2, 'Gender' => 3, 'Email' => 4, 'PhoneNumber' => 5, 'Background' => 6, 'Reason' => 7, 'Prospect' => 8, 'Confirm' => 9, 'FacebookId' => 10, 'TwitterId' => 11, 'Display' => 12, 'CreatedAt' => 13, 'UpdatedAt' => 14, 'Id' => 15, ),
+		BasePeer::TYPE_COLNAME => array (UserPeer::NAME => 0, UserPeer::KANA => 1, UserPeer::BIRTHDAY => 2, UserPeer::GENDER => 3, UserPeer::EMAIL => 4, UserPeer::PHONE_NUMBER => 5, UserPeer::BACKGROUND => 6, UserPeer::REASON => 7, UserPeer::PROSPECT => 8, UserPeer::CONFIRM => 9, UserPeer::FACEBOOK_ID => 10, UserPeer::TWITTER_ID => 11, UserPeer::DISPLAY => 12, UserPeer::CREATED_AT => 13, UserPeer::UPDATED_AT => 14, UserPeer::ID => 15, ),
+		BasePeer::TYPE_FIELDNAME => array ('name' => 0, 'kana' => 1, 'birthday' => 2, 'gender' => 3, 'email' => 4, 'phone_number' => 5, 'background' => 6, 'reason' => 7, 'prospect' => 8, 'confirm' => 9, 'facebook_id' => 10, 'twitter_id' => 11, 'display' => 12, 'created_at' => 13, 'updated_at' => 14, 'id' => 15, ),
 		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, )
 	);
 
@@ -150,11 +150,11 @@ abstract class BaseUserPeer {
 
 		$criteria->addSelectColumn(UserPeer::PHONE_NUMBER);
 
-		$criteria->addSelectColumn(UserPeer::GROUP);
+		$criteria->addSelectColumn(UserPeer::BACKGROUND);
 
 		$criteria->addSelectColumn(UserPeer::REASON);
 
-		$criteria->addSelectColumn(UserPeer::USAGE);
+		$criteria->addSelectColumn(UserPeer::PROSPECT);
 
 		$criteria->addSelectColumn(UserPeer::CONFIRM);
 

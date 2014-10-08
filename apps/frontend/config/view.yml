@@ -9,7 +9,7 @@ default:
     keywords:     symfony, project
     language:     en
 
-  stylesheets:    [main, bootstrap]
+  stylesheets:    [main, top, bootstrap]
 
   javascripts:    []
 

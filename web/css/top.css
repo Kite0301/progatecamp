@@ -40,7 +40,7 @@ body
 .header
 {
 	height: 75px;
-	background-color: black;
+	background-color: rgba(0, 0, 0, 0.8);
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -75,7 +75,6 @@ body
 
 .top
 {
-	padding-top: 75px;
 	color: white;
 	position: relative;
 }
@@ -84,7 +83,7 @@ body
 {
 	background-color: rgba(0, 0, 0, 0.5);
 	position: absolute;
-	top: 75px;
+	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -150,7 +149,8 @@ body
 .learn-top:after,
 .info-top:after,
 .schedule-top:after,
-.entry-top:after
+.entry-top:after,
+.confirm-top:after
 {
 	background: #CDD7E0;
 	content: '';
@@ -564,12 +564,68 @@ body
 	margin: auto;
 }
 
+/*confirm*/
+
+.confirm
+{
+	padding-top: 100px;
+	padding-bottom: 50px;
+	clear: both;
+	overflow: hidden;
+	background-color: #F3F3F2;
+}
+
+.confirm-top
+{
+	text-align: center;
+	font-size: 35px;
+	padding: 10px 0;
+}
+
+.confirm-bottom
+{
+	width: 60%;
+	margin: auto;
+}
+
+.confirm-information
+{
+	text-align: center;
+}
+
+.confirm-text
+{
+	float: left;
+	width: 50%;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	box-sizing: border-box;
+}
+
+.confirm-item
+{
+	clear: both;
+}
+
+.confirm-item-title
+{
+	padding: 10px 0;
+	color: #2FA5E7;
+	font-size: 18px;
+}
+
+.confirm-item-body
+{
+	padding-left: 70px;
+}
+
 /*footer*/
 
 #top-footer
 {
   padding: 20px 0;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
   color: rgba(231, 187, 47, 1.0);
   overflow: hidden;
 }
@@ -629,6 +685,12 @@ body
 	width: 100%;
 	cursor: pointer;
 	font-size: 15px;
+	text-align: center;
+}
+
+.register-btn a
+{
+	color: white;
 }
 
 /*form error*/
