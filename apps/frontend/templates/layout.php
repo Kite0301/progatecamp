@@ -22,7 +22,7 @@
 			<div class="header-navi">
 				<ul class="navi-item">
 					<li><?php echo link_to('About', '#about') ?></li>
-					<li><?php echo link_to('特徴', '#about') ?></li>
+					<li><?php echo link_to('特徴', '#feature') ?></li>
 					<li><?php echo link_to('Schedule', '#schedule') ?></li>
 					<li><?php echo link_to('申し込み', '#entry') ?></li>
 			</div>
@@ -33,7 +33,7 @@
 
 	<footer id="top-footer">
 		<div class="row">
-			<div class="top-footer-title">Progate Camp</div>
+			<div class="top-footer-title">PROGATE CAMP</div>
 			<div class="top-like-box">
 				<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FProgate%2F742679992421539&amp;width=380&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=80&amp;appId=296639803850370" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:380px; height:80px;" allowTransparency="true"></iframe>
 			</div>

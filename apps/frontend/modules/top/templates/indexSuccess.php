@@ -9,7 +9,7 @@
 		<div class="top-main">
 			<ul class="top-list">
 				<li>・プログラミング経験は不問</li>
-				<li>・１ヶ月でゼロからwebサービスを立ち上げ、リリースまでを体験する</li>
+				<li>・２ヶ月でゼロからWEBサービスを立ち上げ、リリースまでを体験する</li>
 				<li>・事前課題・全体学習・個人課題・質問会を通した、もれのないカリキュラム</li>
 			</ul>
 		</div>
@@ -23,9 +23,9 @@
 		<div class="about-bottom">
 			<div class="about-text-wrapper">
 				<div class="about-text">
-					<p>Progate Campとは、オンラインのプログラミング学習サービスProgateの開発チームが、リアルで行うプログラミング学習講座です。</p>
-					<p>プログラミング未経験でも、１ヶ月でゼロからサービス立ち上げまでを体験できるカリキュラムを用意しています。</p>
-					<p>プログラミングに興味がある方、エンジニアとしての就職・転職を考える方、自分でサービスを立ち上げたい方、エンジニアの仕事を理解したい方、ぜひ参加してみませんか。</p>
+					<p>Progate Campとは、オンラインのプログラミング学習サービスProgateの開発チームが、リアルで行うプログラミング学習合宿です。</p>
+					<p>プログラミング未経験の方でも、２ヶ月でゼロからサービス立ち上げまでを体験できるカリキュラムを用意しています。</p>
+					<p>プログラミングに興味がある方、エンジニアとしての就職・転職を考える方、自分でサービスを立ち上げたい方、ぜひ参加してみませんか。</p>
 				</div>
 			</div>
 			<div class="about-image-wrapper">
@@ -48,16 +48,12 @@
 					<div class="feature-item-text">Progateの強みはオンラインの学習プラットフォームを持つことです。ここで基礎を学び、リアルで実践スキルを学ぶ。こうすることで、1ヶ月の成長度合いは格段にあがります。</div>
 				</div>
 				<div class="feature-item">
-					<div class="feature-item-title">☆日曜日の個別サポート☆</div>
-					<div class="feature-item-text">日曜日は希望者向けに質問会を設けております。土曜日の講義で理解不足のところ、課題のわからないところを質問できます。</div>
+					<div class="feature-item-title">☆自由に泊まれる宿泊施設☆</div>
+					<div class="feature-item-text">合宿所で自由に泊まっていただき、極力長い時間を合宿所で過ごして開発に集中していただきます。</div>
 				</div>
 				<div class="feature-item">
-					<div class="feature-item-title">☆プログラミングの活用方法の相談（希望者）☆</div>
+					<div class="feature-item-title">☆プログラミングの活用方法の相談☆</div>
 					<div class="feature-item-text">プログラミングを学んで、今後それをどう活用していくかProgateのメンバーが相談にのります。</div>
-				</div>
-				<div class="feature-item">
-					<div class="feature-item-title">☆キャンプ後の２ヶ月はスカイプなどで、参加者をバックアップ（選考あり）☆</div>
-					<div class="feature-item-text">サービス開発や明確なスキルアップ目的のある方に限って、2ヶ月無料でオンラインオフライン問わず、支援致します。</div>
 				</div>
 			</div>
 		</div>
@@ -98,11 +94,11 @@
 						<div class="item-cover">
 							<div class="item-cover-text">
 								<p>動的なページを作るのに用いられる言語です。</p>
-								<p>HTMLと違い、PHPではユーザーの送信した値によって表示するテキストを変えたり、データを保存できたりします。</p>
+								<p>Rubyではユーザーの送信した値によって表示するテキストを変えたり、データを保存できたりします。</p>
 							</div>
 						</div>
-						<div class="item-top">PHP</div>
-						<div class="item-bottom"><?php echo image_tag('php.png') ?></div>
+						<div class="item-top">Ruby</div>
+						<div class="item-bottom"><?php echo image_tag('ruby.png') ?></div>
 					</div>
 				</div>
 			</div>
@@ -111,8 +107,20 @@
 					<div class="learn-item-inner">
 						<div class="item-cover">
 							<div class="item-cover-text">
+								<p>Rubyのフレームワークです。</p>
+								<p>Webアプリケーションを作る上で必須な機能がひとまとめにされています。</p>
+							</div>
+						</div>
+						<div class="item-top">Ruby on Rails</div>
+						<div class="item-bottom"><?php echo image_tag('rails.png') ?></div>
+					</div>
+				</div>
+				<div class="learn-item">
+					<div class="learn-item-inner">
+						<div class="item-cover">
+							<div class="item-cover-text">
 								<p>jQueryはJavaScriptライブラリの1つです。</p>
-								<p>ユーザーのクリックに反応して表示されるリストや、アニメーションなど、様々な動きを表現することができます。</p>
+								<p>ユーザーのクリックで表示されるリストやアニメーションなど、様々な動きを表現することができます。</p>
 							</div>
 						</div>
 						<div class="item-top">jQuery</div>
@@ -131,18 +139,6 @@
 						<div class="item-bottom"><?php echo image_tag('github.png') ?></div>
 					</div>
 				</div>
-				<div class="learn-item">
-					<div class="learn-item-inner">
-						<div class="item-cover">
-							<div class="item-cover-text">
-								<p>MySQLはデータベースを管理するシステムです。</p>
-								<p>自分のプログラムをMySQLと連携させることで、膨大なデータを扱うことが可能になります。</p>
-							</div>
-						</div>
-						<div class="item-top">MySQL</div>
-						<div class="item-bottom"><?php echo image_tag('mysql.png') ?></div>
-					</div>
-				</div>
 			</div>	
 		</div>
 	</div>
@@ -153,38 +149,39 @@
 		<div class="info-top"><span class="theme-color">第</span>１回キャンプ</div>
 		<div class="info-bottom">
 			<div class="info-main">
-				<div class="info-main-title">11/8~29 東京</div>
+				<div class="info-main-title">11月・12月 田端</div>
 				<div class="info-main-list">
 					<div class="info-main-item">
 						<div class="info-item-left"><span class="theme-color">定</span>員</div>
-						<div class="info-item-right">15名</div>
+						<div class="info-item-right">16名</div>
 					</div>
 					<div class="info-main-item">
 						<div class="info-item-left"><span class="theme-color">日</span>程</div>
-						<div class="info-item-right">・毎週土曜日（11/8, 11/15, 11/22, 11/29）全４回<br>  
-	・日曜日は質問会（自由学習日）</div>
+						<div class="info-item-right">11月1日から12月31日<br></div>
 					</div>
-					<div class="info-main-item">
+					<!-- <div class="info-main-item">
 						<div class="info-item-left"><span class="theme-color">時</span>間</div>
 						<div class="info-item-right">10:00~19:00</div>
-					</div>
+					</div> -->
 					<div class="info-main-item">
 						<div class="info-item-left"><span class="theme-color">場</span>所</div>
-						<div class="info-item-right">株式会社Bitcellar本社オフィス<br>(麻布十番駅徒歩5分)</div>
+						<div class="info-item-right">JR田端駅徒歩5分</div>
 					</div>
-					<div class="info-main-item">
+					<!-- <div class="info-main-item">
 						<div class="info-item-left"><span class="theme-color">参</span>加費</div>
-						<div class="info-item-right">¥20,000</div></div>
+						<div class="info-item-right">¥30,000(今回のみの特別金額です)</div>
+					</div> -->
 					<div class="info-main-item">
 						<div class="info-item-left"><span class="theme-color">参</span>加条件</div>
-						<div class="info-item-right">①パソコン持参<br>②所定の事前課題の完了<br>③全４回の講義に出席</div>
+						<div class="info-item-right">①パソコン持参<br>②所定の事前課題の完了</div>
 					</div>
 					<div class="info-main-item">
 						<div class="info-item-left"><span class="theme-color">事</span>前課題</div>
-						<div class="info-item-right">Progate (prog-8.com) のHTML, PHPレッスン</div></div>
+						<div class="info-item-right">Progate (prog-8.com) のHTML, PHP, jQueryレッスン</div>
+					</div>
 				</div>
 			</div>
-			<div class="info-company">
+			<!-- <div class="info-company">
 				<div class="info-main-title">Bitcellar 協賛</div>
 				<div class="info-main-list">
 					<div class="info-company-item">
@@ -198,7 +195,7 @@
 						<div class="info-company-image"></div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>
@@ -207,49 +204,115 @@
 	<div class="schedule-top"><span class="theme-color">S</span>chedule</div>
 	<div class="schedule-item">
 		<div class="schedule-week">
-			<div>０週目</div>
+			<div>事前課題</div>
 		</div>
 		<div class="schedule-item-text">
-			<div class="schedule-title">ProgateでHTMLとPHPを覚えよう！</div>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
-			<span></span>
+			<div class="schedule-title-wrapper"><div class="schedule-title"><span class="theme-color">P</span>rogateで予習しよう</div></div>
+			<div class="schedule-text">
+				<div class="schedule-link"><?php echo link_to('Progate', 'http://prog-8.com') ?></div>のHTML&CSS, PHP, jQueryレッスンを終わらせて、プログラミングの基礎を身につけましょう。<br>
+				<div class="schedule-link"><?php echo link_to('ドットインストール', 'http://dotinstall.com/lessons/basic_ruby_v2') ?></div>のRuby入門を見て、Rubyの書き方を覚えましょう。
+			</div>
 		</div>
 	</div>
 	<div class="schedule-item">
 		<div class="schedule-week">
-			<div>１週目</div>
+			<div>Week 1</div>
 		</div>
 		<div class="schedule-item-text">
-			<div class="schedule-title">Gitでバージョン管理をしよう！</div>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
-			<span></span>
+			<div class="schedule-title-wrapper"><div class="schedule-title"><span class="theme-color">W</span>ebアプリ開発に触れてみよう</div></div>
+			<div class="schedule-text">
+				プログラミングの基本であるターミナルの操作に慣れましょう。<br>
+				GitとGithubの使い方を覚えて、バージョン管理の方法を学びましょう。<br>
+				Ruby on Railsに触れてみることで、Webアプリケーション開発の基礎を学びましょう。
+			</div>
 		</div>
 	</div>
 	<div class="schedule-item">
 		<div class="schedule-week">
-			<div>２週目</div>
+			<div>Week 2</div>
 		</div>
 		<div class="schedule-item-text">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
-			<span></span>
+			<div class="schedule-title-wrapper"><div class="schedule-title"><span class="theme-color">T</span>witterを作ろう</div></div>
+			<div class="schedule-text">
+				Ruby on Railsのチュートリアルを通じて、TwitterのようなWebアプリケーションを作っていきましょう。<br>
+				作ったアプリケーションをサーバーにアップロードして公開する方法を学びましょう。<br>
+				Web開発に使えるデザインツールに触れてみましょう。
+			</div>
 		</div>
 	</div>
 	<div class="schedule-item">
 		<div class="schedule-week">
-			<div>３週目</div>
+			<div>Week 3</div>
 		</div>
 		<div class="schedule-item-text">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
-			<span></span>
+			<div class="schedule-title-wrapper"><div class="schedule-title"><span class="theme-color">自</span>分のアプリケーションを作ろう</div></div>
+			<div class="schedule-text">
+				チュートリアルを完成させましょう。<br>
+				自分のオリジナルのアプリケーションについてブレインストームをしましょう。<br>
+				二人一組になって、オリジナルのアプリケーションの開発を始めましょう。
+			</div>
 		</div>
 	</div>
 	<div class="schedule-item">
 		<div class="schedule-week">
-			<div>４週目</div>
+			<div>Week 4</div>
 		</div>
 		<div class="schedule-item-text">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
-			<span></span>
+			<div class="schedule-title-wrapper"><div class="schedule-title"><span class="theme-color">基</span>本機能を作ろう</div></div>
+			<div class="schedule-text">
+				アプリケーションの基本となる機能のシステムを構築していきましょう。<br>
+				データベースと自分のアプリケーションを接続しましょう。<br>
+				Githubを用いた複数人でのバージョン管理に慣れましょう。
+			</div>
+		</div>
+	</div>
+	<div class="schedule-item">
+		<div class="schedule-week">
+			<div>Week 5</div>
+		</div>
+		<div class="schedule-item-text">
+			<div class="schedule-title-wrapper"><div class="schedule-title"><span class="theme-color">見</span>た目を整えよう</div></div>
+			<div class="schedule-text">
+				基本機能ができたら、そこにデザインを加えて見栄えをよくしていきましょう。<br>
+				簡単に使えるデザインツールを活用しましょう<br>
+			</div>
+		</div>
+	</div>
+	<div class="schedule-item">
+		<div class="schedule-week">
+			<div>Week 6 - 7</div>
+		</div>
+		<div class="schedule-item-text">
+			<div class="schedule-title-wrapper"><div class="schedule-title"><span class="theme-color">機</span>能を拡張しよう</div></div>
+			<div class="schedule-text">
+				自分のアプリケーションにバグがある場合は、デバッグを行いましょう。<br>
+				また、様々な機能を追加して改良していきましょう。<br>
+			</div>
+		</div>
+	</div>
+	<div class="schedule-item">
+		<div class="schedule-week">
+			<div>Week 8</div>
+		</div>
+		<div class="schedule-item-text">
+			<div class="schedule-title-wrapper"><div class="schedule-title"><span class="theme-color">ユ</span>ーザーテストをしよう</div></div>
+			<div class="schedule-text">
+				お互いのアプリケーションに対してフィードバックをしましょう。<br>
+				フィードバックをもとに、アプリケーションを改良していきましょう。
+			</div>
+		</div>
+	</div>
+	<div class="schedule-item">
+		<div class="schedule-week">
+			<div>Week 9</div>
+		</div>
+		<div class="schedule-item-text">
+			<div class="schedule-title-wrapper"><div class="schedule-title"><span class="theme-color">D</span>emo Dayに備えよう</div></div>
+			<div class="schedule-text">
+				アプリケーションの最後の調整を行いましょう。<br>
+				Demo Dayに向けて準備をしましょう<br>
+				自分のアプリケーションを紹介しましょう。
+			</div>
 		</div>
 	</div>
 </div>
@@ -322,7 +385,7 @@
 				</label>
 				<label>
 					<?php echo checkbox_tag('third', 1, false) ?>
-					<div class="entry-checkbox">毎週土曜日の講義に出席できます。</div>
+					<div class="entry-checkbox">２ヶ月間の合宿にできるだけ参加します。</div>
 				</label>
 			</div>
 		</div>
