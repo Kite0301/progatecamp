@@ -24,6 +24,11 @@ body
 	font-family: 'Source Sans Pro', 'Axis', 'Lucida Grande', sans-serif;
 }
 
+video
+{
+	width: 100%;
+}
+
 .theme-color
 {
 	color: #E7BB2F;
