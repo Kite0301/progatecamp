@@ -15,9 +15,9 @@
 <body>
 
 	<div class="header">
-		<div class="container">
+		<div class="header-container">
 			<div class="header-logo theme-color">
-				<h2>PROGATE CAMP</h2>
+				<h1>PROGATE CAMP</h1>
 			</div>
 			<div class="header-navi">
 				<ul class="navi-item">

@@ -4,14 +4,18 @@
 	<div class="top-background">
 		<div class="top-title">
 			<div class="title">Learn to <span class="theme-color">Code</span>, Learn to be <span class="theme-color">Creative</span></div>
-			<div class="title-sub">−学歴・年齢不問。志あるものが集い、倍速で成長する−</div>
+			<div class="title-sub">− ９週間・５００時間 <!-- -</div>
+			<div class="title-sub">−  -->倍速で成長するプログラミングキャンプ −</div>
 		</div>
 		<div class="top-main">
 			<ul class="top-list">
-				<li>・プログラミング経験は不問</li>
-				<li>・２ヶ月でゼロからWEBサービスを立ち上げ、リリースまでを体験する</li>
-				<li>・事前課題・全体学習・個人課題・質問会を通した、もれのないカリキュラム</li>
+				<li>プログラミング経験は不問</li>
+				<li>２ヶ月でゼロからWEBサービスを立ち上げ、プログラミングを習得する</li>
+				<!-- <li>事前課題・全体学習・個人課題・質問会を通した、もれのないカリキュラム</li> -->
 			</ul>
+			<div class="register-now">
+				<div id="register-btn" class="register-btn">今すぐ申し込む</div>
+			</div>
 		</div>
 	</div>
 	<video autoplay loop src="/progatecamp/videos/camp.mp4"></video>
@@ -23,9 +27,9 @@
 		<div class="about-bottom">
 			<div class="about-text-wrapper">
 				<div class="about-text">
-					<p>Progate Campとは、オンラインのプログラミング学習サービスProgateの開発チームが、リアルで行うプログラミング学習合宿です。</p>
+					<p>Progate Campとは、プログラミングに興味のある方、エンジニアとしての就職・転職したい方のために用意されたプログラミング開発合宿です。</p>
 					<p>プログラミング未経験の方でも、２ヶ月でゼロからサービス立ち上げまでを体験できるカリキュラムを用意しています。</p>
-					<p>プログラミングに興味がある方、エンジニアとしての就職・転職を考える方、自分でサービスを立ち上げたい方、ぜひ参加してみませんか。</p>
+					<p>Progateのプロフェッショナル開発チームがメンターとしてサポートし、一日目からプログラミングにどっぷり触れていきます。</p>
 				</div>
 			</div>
 			<div class="about-image-wrapper">
@@ -45,15 +49,15 @@
 			<div class="feature-text">
 				<div class="feature-item">
 					<div class="feature-item-title">☆オンラインとオフラインの組み合わせ☆</div>
-					<div class="feature-item-text">Progateの強みはオンラインの学習プラットフォームを持つことです。ここで基礎を学び、リアルで実践スキルを学ぶ。こうすることで、1ヶ月の成長度合いは格段にあがります。</div>
+					<div class="feature-item-text">Progateの強みはオンラインの学習プラットフォームを持つことです。ここで基礎を学び、合宿で実践スキルを学ぶことで、成長度合いは格段にあがります。</div>
+				</div>
+				<div class="feature-item">
+					<div class="feature-item-title">☆９週間・５００時間の超集中型キャンプ☆</div>
+					<div class="feature-item-text">毎日平均９時間コードを書くことで、超短期でのプログラミングの習得を目指します。</div>
 				</div>
 				<div class="feature-item">
 					<div class="feature-item-title">☆自由に泊まれる宿泊施設☆</div>
 					<div class="feature-item-text">合宿所で自由に泊まっていただき、極力長い時間を合宿所で過ごして開発に集中していただきます。</div>
-				</div>
-				<div class="feature-item">
-					<div class="feature-item-title">☆プログラミングの活用方法の相談☆</div>
-					<div class="feature-item-text">プログラミングを学んで、今後それをどう活用していくかProgateのメンバーが相談にのります。</div>
 				</div>
 			</div>
 		</div>
@@ -420,6 +424,12 @@ $(function() {
 				break;
 			}
 		}
+	});
+
+	$("#register-btn").click(function () {
+		var p = $("#entry").offset().top;
+		$('html,body').animate({ scrollTop: p }, '2000');
+		return false;
 	});
 
 </script>
