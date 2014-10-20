@@ -23,6 +23,11 @@ main
   padding: 75px 0 130px 0;
 }
 
+main .confirm
+{
+  background-color: white;
+}
+
 .login
 {
   padding: 150px 200px;
