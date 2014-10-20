@@ -22,7 +22,15 @@
         </div>
         <div class="header-navi">
           <ul class="navi-item">
-            <li><?php echo link_to('About', '#about') ?></li>
+            <!-- ログイン時 -->
+          <?php if ($sf_user->isAuthenticated()) : ?>
+            <li><?php echo link_to('User', '@user_list') ?></li>
+            <li><?php echo link_to('Sign Out', '@logout') ?></li>
+
+          <!-- 未ログイン時 -->
+          <?php else : ?>
+            <li><?php echo link_to('Sign In', '@login') ?></li>
+          <?php endif; ?>
         </div>
       </div>
     </div>
