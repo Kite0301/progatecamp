@@ -30,6 +30,12 @@ class userActions extends sfActions
   	$user->setProspect($this->getRequestParameter('prospect'));
   	$user->save();
 
+    $subject = 'Progate Camp 参加申請';
+
+    $body = $user.'からProgate Campへの参加の申請がありました。';
+
+    myTools::sendMail("info@prog-8.com", $subject, $body);
+
   	$this->user = $user;
   }
 
