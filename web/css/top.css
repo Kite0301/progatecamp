@@ -12,6 +12,10 @@ body
 	font-family: 'Source Sans Pro', 'Lucida Grande', sans-serif;
 }
 
+video{
+	width: 100%;
+}
+
 .theme-color
 {
 	color: #E7BB2F;
@@ -64,7 +68,7 @@ body
 	color: white;
 }
 
-.navi-item li 
+.navi-item li
 {
 	float: left;
 	list-style: none;
@@ -385,7 +389,7 @@ body
 .info-company
 {
 	width: 50%;
-	float: left;	
+	float: left;
 }
 
 .info-main-item

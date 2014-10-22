@@ -14,7 +14,7 @@
 			</ul>
 		</div>
 	</div>
-	<video autoplay loop src="/progatecamp/videos/camp.mp4"></video>
+	<video autoplay loop src="/progate_camp/videos/camp.mp4"></video>
 </div>
 
 <div id="about" class="about">
@@ -143,7 +143,7 @@
 						<div class="item-bottom"><?php echo image_tag('mysql.png') ?></div>
 					</div>
 				</div>
-			</div>	
+			</div>
 		</div>
 	</div>
 </div>
@@ -161,7 +161,7 @@
 					</div>
 					<div class="info-main-item">
 						<div class="info-item-left"><span class="theme-color">日</span>程</div>
-						<div class="info-item-right">・毎週土曜日（11/8, 11/15, 11/22, 11/29）全４回<br>  
+						<div class="info-item-right">・毎週土曜日（11/8, 11/15, 11/22, 11/29）全４回<br>
 	・日曜日は質問会（自由学習日）</div>
 					</div>
 					<div class="info-main-item">
@@ -207,21 +207,30 @@
 	<div class="schedule-top"><span class="theme-color">S</span>chedule</div>
 	<div class="schedule-item">
 		<div class="schedule-week">
-			<div>０週目</div>
+			<div>０週目（所要時間：6h）</div>
 		</div>
 		<div class="schedule-item-text">
 			<div class="schedule-title">ProgateでHTMLとPHPを覚えよう！</div>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
+			<p>
+				事前課題としてProgate(<a href="http://prog-8.com">http://prog-8.com</a>)のHTML、PHPコースを終わらせてください。
+				これによってWEBアプリ作成の基礎を身につけることができます。
+			</p>
 			<span></span>
 		</div>
 	</div>
+	<div>掲示板をつくろう</div>
 	<div class="schedule-item">
 		<div class="schedule-week">
 			<div>１週目</div>
 		</div>
 		<div class="schedule-item-text">
-			<div class="schedule-title">Gitでバージョン管理をしよう！</div>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
+			<div class="schedule-title">HTMLのコーディングとGitによるバージョン管理をしよう</div>
+			<p>
+				まずはHTMLで掲示板の見た目を作っていきます。
+				また、Git、ターミナルの使い方を学びつつ、サーバーにアップロードする方法も学びます。
+			</p>
+			<span></span>
+			<div>HTMLの課題</div>
 			<span></span>
 		</div>
 	</div>
@@ -230,7 +239,12 @@
 			<div>２週目</div>
 		</div>
 		<div class="schedule-item-text">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
+			<div class="schedule-title">PHPでデータベースを使ってみよう</div>
+			<p>
+				PHPでMySQL（データベース）に接続する方法を学びます。
+				ユーザー
+
+			</p>
 			<span></span>
 		</div>
 	</div>
@@ -239,7 +253,10 @@
 			<div>３週目</div>
 		</div>
 		<div class="schedule-item-text">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit </p>
+			<div class="schedule-title"></div>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit
+			</p>
 			<span></span>
 		</div>
 	</div>
@@ -347,7 +364,7 @@ $(function() {
 
 	$('#submit').click(function(event) {
 		var $checkbox = $('#entry-checkbox').find('input[type="checkbox"]');
-		
+
 		for (var i = 0; i < 3; i++)
 		{
 			if (!$checkbox.eq(i).attr("checked"))
