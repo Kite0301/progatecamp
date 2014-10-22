@@ -161,12 +161,7 @@
 					</div>
 					<div class="info-main-item">
 						<div class="info-item-left"><span class="theme-color">日</span>程</div>
-<<<<<<< HEAD
-						<div class="info-item-right">・毎週土曜日（11/8, 11/15, 11/22, 11/29）全４回<br>
-	・日曜日は質問会（自由学習日）</div>
-=======
-						<div class="info-item-right">11月1日から12月31日<br></div>
->>>>>>> e7f28cdb175f656a269bbdfe3eb057d4d4cd6e2a
+						<div class="info-item-right">11月2日から12月31日<br></div>
 					</div>
 					<!-- <div class="info-main-item">
 						<div class="info-item-left"><span class="theme-color">時</span>間</div>
@@ -190,21 +185,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- <div class="info-company">
-				<div class="info-main-title">Bitcellar 協賛</div>
-				<div class="info-main-list">
-					<div class="info-company-item">
-						<div class="info-company-text">「Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. 」</div>
-						<div class="info-company-name">秋山 博紀 / UI・UX engineer</div>
-						<div class="info-company-image"></div>
-					</div>
-					<div class="info-company-item">
-						<div class="info-company-text">「Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. 」</div>
-						<div class="info-company-name">川村　亮介 / 代表取締役社長</div>
-						<div class="info-company-image"></div>
-					</div>
-				</div>
-			</div> -->
 		</div>
 	</div>
 </div>
@@ -213,17 +193,6 @@
 	<div class="schedule-top"><span class="theme-color">S</span>chedule</div>
 	<div class="schedule-item">
 		<div class="schedule-week">
-<<<<<<< HEAD
-			<div>０週目（所要時間：6h）</div>
-		</div>
-		<div class="schedule-item-text">
-			<div class="schedule-title">ProgateでHTMLとPHPを覚えよう！</div>
-			<p>
-				事前課題としてProgate(<a href="http://prog-8.com">http://prog-8.com</a>)のHTML、PHPコースを終わらせてください。
-				これによってWEBアプリ作成の基礎を身につけることができます。
-			</p>
-			<span></span>
-=======
 			<div>事前課題</div>
 		</div>
 		<div class="schedule-item-text">
@@ -232,7 +201,6 @@
 				<div class="schedule-link"><?php echo link_to('Progate', 'http://prog-8.com') ?></div>のHTML&CSS, PHP, jQueryレッスンを終わらせて、プログラミングの基礎を身につけましょう。<br>
 				<div class="schedule-link"><?php echo link_to('ドットインストール', 'http://dotinstall.com/lessons/basic_ruby_v2') ?></div>のRuby入門を見て、Rubyの書き方を覚えましょう。
 			</div>
->>>>>>> e7f28cdb175f656a269bbdfe3eb057d4d4cd6e2a
 		</div>
 	</div>
 	<div>掲示板をつくろう</div>
@@ -241,23 +209,12 @@
 			<div>Week 1</div>
 		</div>
 		<div class="schedule-item-text">
-<<<<<<< HEAD
-			<div class="schedule-title">HTMLのコーディングとGitによるバージョン管理をしよう</div>
-			<p>
-				まずはHTMLで掲示板の見た目を作っていきます。
-				また、Git、ターミナルの使い方を学びつつ、サーバーにアップロードする方法も学びます。
-			</p>
-			<span></span>
-			<div>HTMLの課題</div>
-			<span></span>
-=======
 			<div class="schedule-title-wrapper"><div class="schedule-title"><span class="theme-color">W</span>ebアプリ開発に触れてみよう</div></div>
 			<div class="schedule-text">
 				プログラミングの基本であるターミナルの操作に慣れましょう。<br>
 				GitとGithubの使い方を覚えて、バージョン管理の方法を学びましょう。<br>
 				Ruby on Railsに触れてみることで、Webアプリケーション開発の基礎を学びましょう。
 			</div>
->>>>>>> e7f28cdb175f656a269bbdfe3eb057d4d4cd6e2a
 		</div>
 	</div>
 	<div class="schedule-item">
@@ -265,22 +222,12 @@
 			<div>Week 2</div>
 		</div>
 		<div class="schedule-item-text">
-<<<<<<< HEAD
-			<div class="schedule-title">PHPでデータベースを使ってみよう</div>
-			<p>
-				PHPでMySQL（データベース）に接続する方法を学びます。
-				ユーザー
-
-			</p>
-			<span></span>
-=======
 			<div class="schedule-title-wrapper"><div class="schedule-title"><span class="theme-color">T</span>witterを作ろう</div></div>
 			<div class="schedule-text">
 				Ruby on Railsのチュートリアルを通じて、TwitterのようなWebアプリケーションを作っていきましょう。<br>
 				作ったアプリケーションをサーバーにアップロードして公開する方法を学びましょう。<br>
 				Web開発に使えるデザインツールに触れてみましょう。
 			</div>
->>>>>>> e7f28cdb175f656a269bbdfe3eb057d4d4cd6e2a
 		</div>
 	</div>
 	<div class="schedule-item">
@@ -288,20 +235,12 @@
 			<div>Week 3</div>
 		</div>
 		<div class="schedule-item-text">
-<<<<<<< HEAD
-			<div class="schedule-title"></div>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit
-			</p>
-			<span></span>
-=======
 			<div class="schedule-title-wrapper"><div class="schedule-title"><span class="theme-color">自</span>分のアプリケーションを作ろう</div></div>
 			<div class="schedule-text">
 				チュートリアルを完成させましょう。<br>
 				自分のオリジナルのアプリケーションについてブレインストームをしましょう。<br>
 				二人一組になって、オリジナルのアプリケーションの開発を始めましょう。
 			</div>
->>>>>>> e7f28cdb175f656a269bbdfe3eb057d4d4cd6e2a
 		</div>
 	</div>
 	<div class="schedule-item">
