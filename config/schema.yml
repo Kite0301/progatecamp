@@ -1,4 +1,6 @@
 propel:
+
+  #ユーザー
   user:
     name: varchar(60)
     kana: varchar(60)
@@ -10,8 +12,27 @@ propel:
     reason: longvarchar
     prospect: longvarchar
     confirm: { type: integer, default: 0 }
+    remember_key: longvarchar
     facebook_id: varchar(255)
     twitter_id: varchar(255)
     display: integer
     created_at:
     updated_at:
+
+  #タスク
+  task: 
+    title: varchar(255) #題名
+    body: longvarchar #内容
+    due_date: timestamp #期限
+    completed_users: {type: integer, default: 0} #達成済みユーザー数
+    display: integer
+    created_at:
+    updated_at:
+
+  #ユーザーとタスクの関係
+  user_task:
+    user_id: {type: integer, foreignTable: user, foreignReference: id, onDelete: cascade} #ユーザーのid
+    task_id: {type: integer, foreignTable: task, foreignReference: id, onDelete: cascade} #タスクのid
+    created_at:
+    updated_at:
+

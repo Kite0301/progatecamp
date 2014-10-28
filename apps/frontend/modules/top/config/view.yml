@@ -1,2 +1,3 @@
 indexSuccess:
-  stylesheets: [top]
+  has_layout: off
+  stylesheets: [top, -common]

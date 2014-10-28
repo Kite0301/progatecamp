@@ -31,4 +31,9 @@ class myTools
     //メールを送信
     $mail->Send();
   }
+
+  public static function generate_random_key()
+  {
+    return md5(rand(100000, 999999));
+  }
 }

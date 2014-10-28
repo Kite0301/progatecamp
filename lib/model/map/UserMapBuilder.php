@@ -52,6 +52,8 @@ class UserMapBuilder {
 
 		$tMap->addColumn('CONFIRM', 'Confirm', 'int', CreoleTypes::INTEGER, false, null);
 
+		$tMap->addColumn('REMEMBER_KEY', 'RememberKey', 'string', CreoleTypes::LONGVARCHAR, false, null);
+
 		$tMap->addColumn('FACEBOOK_ID', 'FacebookId', 'string', CreoleTypes::VARCHAR, false, 255);
 
 		$tMap->addColumn('TWITTER_ID', 'TwitterId', 'string', CreoleTypes::VARCHAR, false, 255);

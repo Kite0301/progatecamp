@@ -15,6 +15,44 @@ class userActions extends sfActions
    *
    */
 
+  //一覧
+  public function executeList()
+  {
+    $this->users = UserPeer::doSelect(new Criteria());
+  }
+
+  //ログイン
+  public function executeLogin()
+  {
+    if ($this->getUser()->isAuthenticated())
+    {
+      $this->redirect('@user_list');
+    }
+
+    //最初の表示
+    if ($this->getRequest()->getMethod() != sfRequest::POST)
+    {
+      return sfView::SUCCESS;
+    }
+    //myLoginValidatorでログイン処理
+    //フォームから返ってきた場合
+    else
+    {
+      $this->redirect('@user_list');
+    }
+
+  }
+
+
+  //ログアウト
+  public function executeLogout()
+  {
+    $this->getUser()->signOut();
+
+    $this->redirect('@homepage');
+  }
+
+  //登録確認画面
   public function executeConfirm()
   {
   	$user = new User();
@@ -37,6 +75,12 @@ class userActions extends sfActions
     myTools::sendMail("info@prog-8.com", $subject, $body);
 
   	$this->user = $user;
+  }
+
+  //バリデーション関連
+  public function handleErrorLogin()
+  {
+    return sfView::SUCCESS;
   }
 
   public function handleErrorConfirm()

@@ -49,6 +49,10 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 
 	
+	protected $remember_key;
+
+
+	
 	protected $facebook_id;
 
 
@@ -70,6 +74,12 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 	
 	protected $id;
+
+	
+	protected $collUserTasks;
+
+	
+	protected $lastUserTaskCriteria = null;
 
 	
 	protected $alreadyInSave = false;
@@ -160,6 +170,13 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 	{
 
 		return $this->confirm;
+	}
+
+	
+	public function getRememberKey()
+	{
+
+		return $this->remember_key;
 	}
 
 	
@@ -378,6 +395,20 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 	} 
 	
+	public function setRememberKey($v)
+	{
+
+						if ($v !== null && !is_string($v)) {
+			$v = (string) $v; 
+		}
+
+		if ($this->remember_key !== $v) {
+			$this->remember_key = $v;
+			$this->modifiedColumns[] = UserPeer::REMEMBER_KEY;
+		}
+
+	} 
+	
 	public function setFacebookId($v)
 	{
 
@@ -492,23 +523,25 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 			$this->confirm = $rs->getInt($startcol + 9);
 
-			$this->facebook_id = $rs->getString($startcol + 10);
+			$this->remember_key = $rs->getString($startcol + 10);
 
-			$this->twitter_id = $rs->getString($startcol + 11);
+			$this->facebook_id = $rs->getString($startcol + 11);
 
-			$this->display = $rs->getInt($startcol + 12);
+			$this->twitter_id = $rs->getString($startcol + 12);
 
-			$this->created_at = $rs->getTimestamp($startcol + 13, null);
+			$this->display = $rs->getInt($startcol + 13);
 
-			$this->updated_at = $rs->getTimestamp($startcol + 14, null);
+			$this->created_at = $rs->getTimestamp($startcol + 14, null);
 
-			$this->id = $rs->getInt($startcol + 15);
+			$this->updated_at = $rs->getTimestamp($startcol + 15, null);
+
+			$this->id = $rs->getInt($startcol + 16);
 
 			$this->resetModified();
 
 			$this->setNew(false);
 
-						return $startcol + 16; 
+						return $startcol + 17; 
 		} catch (Exception $e) {
 			throw new PropelException("Error populating User object", $e);
 		}
@@ -586,6 +619,14 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 				}
 				$this->resetModified(); 			}
 
+			if ($this->collUserTasks !== null) {
+				foreach($this->collUserTasks as $referrerFK) {
+					if (!$referrerFK->isDeleted()) {
+						$affectedRows += $referrerFK->save($con);
+					}
+				}
+			}
+
 			$this->alreadyInSave = false;
 		}
 		return $affectedRows;
@@ -626,6 +667,14 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 				$failureMap = array_merge($failureMap, $retval);
 			}
 
+
+				if ($this->collUserTasks !== null) {
+					foreach($this->collUserTasks as $referrerFK) {
+						if (!$referrerFK->validate($columns)) {
+							$failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+						}
+					}
+				}
 
 
 			$this->alreadyInValidation = false;
@@ -676,21 +725,24 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 				return $this->getConfirm();
 				break;
 			case 10:
-				return $this->getFacebookId();
+				return $this->getRememberKey();
 				break;
 			case 11:
-				return $this->getTwitterId();
+				return $this->getFacebookId();
 				break;
 			case 12:
-				return $this->getDisplay();
+				return $this->getTwitterId();
 				break;
 			case 13:
-				return $this->getCreatedAt();
+				return $this->getDisplay();
 				break;
 			case 14:
-				return $this->getUpdatedAt();
+				return $this->getCreatedAt();
 				break;
 			case 15:
+				return $this->getUpdatedAt();
+				break;
+			case 16:
 				return $this->getId();
 				break;
 			default:
@@ -713,12 +765,13 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 			$keys[7] => $this->getReason(),
 			$keys[8] => $this->getProspect(),
 			$keys[9] => $this->getConfirm(),
-			$keys[10] => $this->getFacebookId(),
-			$keys[11] => $this->getTwitterId(),
-			$keys[12] => $this->getDisplay(),
-			$keys[13] => $this->getCreatedAt(),
-			$keys[14] => $this->getUpdatedAt(),
-			$keys[15] => $this->getId(),
+			$keys[10] => $this->getRememberKey(),
+			$keys[11] => $this->getFacebookId(),
+			$keys[12] => $this->getTwitterId(),
+			$keys[13] => $this->getDisplay(),
+			$keys[14] => $this->getCreatedAt(),
+			$keys[15] => $this->getUpdatedAt(),
+			$keys[16] => $this->getId(),
 		);
 		return $result;
 	}
@@ -765,21 +818,24 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 				$this->setConfirm($value);
 				break;
 			case 10:
-				$this->setFacebookId($value);
+				$this->setRememberKey($value);
 				break;
 			case 11:
-				$this->setTwitterId($value);
+				$this->setFacebookId($value);
 				break;
 			case 12:
-				$this->setDisplay($value);
+				$this->setTwitterId($value);
 				break;
 			case 13:
-				$this->setCreatedAt($value);
+				$this->setDisplay($value);
 				break;
 			case 14:
-				$this->setUpdatedAt($value);
+				$this->setCreatedAt($value);
 				break;
 			case 15:
+				$this->setUpdatedAt($value);
+				break;
+			case 16:
 				$this->setId($value);
 				break;
 		} 	}
@@ -799,12 +855,13 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 		if (array_key_exists($keys[7], $arr)) $this->setReason($arr[$keys[7]]);
 		if (array_key_exists($keys[8], $arr)) $this->setProspect($arr[$keys[8]]);
 		if (array_key_exists($keys[9], $arr)) $this->setConfirm($arr[$keys[9]]);
-		if (array_key_exists($keys[10], $arr)) $this->setFacebookId($arr[$keys[10]]);
-		if (array_key_exists($keys[11], $arr)) $this->setTwitterId($arr[$keys[11]]);
-		if (array_key_exists($keys[12], $arr)) $this->setDisplay($arr[$keys[12]]);
-		if (array_key_exists($keys[13], $arr)) $this->setCreatedAt($arr[$keys[13]]);
-		if (array_key_exists($keys[14], $arr)) $this->setUpdatedAt($arr[$keys[14]]);
-		if (array_key_exists($keys[15], $arr)) $this->setId($arr[$keys[15]]);
+		if (array_key_exists($keys[10], $arr)) $this->setRememberKey($arr[$keys[10]]);
+		if (array_key_exists($keys[11], $arr)) $this->setFacebookId($arr[$keys[11]]);
+		if (array_key_exists($keys[12], $arr)) $this->setTwitterId($arr[$keys[12]]);
+		if (array_key_exists($keys[13], $arr)) $this->setDisplay($arr[$keys[13]]);
+		if (array_key_exists($keys[14], $arr)) $this->setCreatedAt($arr[$keys[14]]);
+		if (array_key_exists($keys[15], $arr)) $this->setUpdatedAt($arr[$keys[15]]);
+		if (array_key_exists($keys[16], $arr)) $this->setId($arr[$keys[16]]);
 	}
 
 	
@@ -822,6 +879,7 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 		if ($this->isColumnModified(UserPeer::REASON)) $criteria->add(UserPeer::REASON, $this->reason);
 		if ($this->isColumnModified(UserPeer::PROSPECT)) $criteria->add(UserPeer::PROSPECT, $this->prospect);
 		if ($this->isColumnModified(UserPeer::CONFIRM)) $criteria->add(UserPeer::CONFIRM, $this->confirm);
+		if ($this->isColumnModified(UserPeer::REMEMBER_KEY)) $criteria->add(UserPeer::REMEMBER_KEY, $this->remember_key);
 		if ($this->isColumnModified(UserPeer::FACEBOOK_ID)) $criteria->add(UserPeer::FACEBOOK_ID, $this->facebook_id);
 		if ($this->isColumnModified(UserPeer::TWITTER_ID)) $criteria->add(UserPeer::TWITTER_ID, $this->twitter_id);
 		if ($this->isColumnModified(UserPeer::DISPLAY)) $criteria->add(UserPeer::DISPLAY, $this->display);
@@ -878,6 +936,8 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 		$copyObj->setConfirm($this->confirm);
 
+		$copyObj->setRememberKey($this->remember_key);
+
 		$copyObj->setFacebookId($this->facebook_id);
 
 		$copyObj->setTwitterId($this->twitter_id);
@@ -888,6 +948,15 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 		$copyObj->setUpdatedAt($this->updated_at);
 
+
+		if ($deepCopy) {
+									$copyObj->setNew(false);
+
+			foreach($this->getUserTasks() as $relObj) {
+				$copyObj->addUserTask($relObj->copy($deepCopy));
+			}
+
+		} 
 
 		$copyObj->setNew(true);
 
@@ -910,6 +979,111 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 			self::$peer = new UserPeer();
 		}
 		return self::$peer;
+	}
+
+	
+	public function initUserTasks()
+	{
+		if ($this->collUserTasks === null) {
+			$this->collUserTasks = array();
+		}
+	}
+
+	
+	public function getUserTasks($criteria = null, $con = null)
+	{
+				include_once 'lib/model/om/BaseUserTaskPeer.php';
+		if ($criteria === null) {
+			$criteria = new Criteria();
+		}
+		elseif ($criteria instanceof Criteria)
+		{
+			$criteria = clone $criteria;
+		}
+
+		if ($this->collUserTasks === null) {
+			if ($this->isNew()) {
+			   $this->collUserTasks = array();
+			} else {
+
+				$criteria->add(UserTaskPeer::USER_ID, $this->getId());
+
+				UserTaskPeer::addSelectColumns($criteria);
+				$this->collUserTasks = UserTaskPeer::doSelect($criteria, $con);
+			}
+		} else {
+						if (!$this->isNew()) {
+												
+
+				$criteria->add(UserTaskPeer::USER_ID, $this->getId());
+
+				UserTaskPeer::addSelectColumns($criteria);
+				if (!isset($this->lastUserTaskCriteria) || !$this->lastUserTaskCriteria->equals($criteria)) {
+					$this->collUserTasks = UserTaskPeer::doSelect($criteria, $con);
+				}
+			}
+		}
+		$this->lastUserTaskCriteria = $criteria;
+		return $this->collUserTasks;
+	}
+
+	
+	public function countUserTasks($criteria = null, $distinct = false, $con = null)
+	{
+				include_once 'lib/model/om/BaseUserTaskPeer.php';
+		if ($criteria === null) {
+			$criteria = new Criteria();
+		}
+		elseif ($criteria instanceof Criteria)
+		{
+			$criteria = clone $criteria;
+		}
+
+		$criteria->add(UserTaskPeer::USER_ID, $this->getId());
+
+		return UserTaskPeer::doCount($criteria, $distinct, $con);
+	}
+
+	
+	public function addUserTask(UserTask $l)
+	{
+		$this->collUserTasks[] = $l;
+		$l->setUser($this);
+	}
+
+
+	
+	public function getUserTasksJoinTask($criteria = null, $con = null)
+	{
+				include_once 'lib/model/om/BaseUserTaskPeer.php';
+		if ($criteria === null) {
+			$criteria = new Criteria();
+		}
+		elseif ($criteria instanceof Criteria)
+		{
+			$criteria = clone $criteria;
+		}
+
+		if ($this->collUserTasks === null) {
+			if ($this->isNew()) {
+				$this->collUserTasks = array();
+			} else {
+
+				$criteria->add(UserTaskPeer::USER_ID, $this->getId());
+
+				$this->collUserTasks = UserTaskPeer::doSelectJoinTask($criteria, $con);
+			}
+		} else {
+									
+			$criteria->add(UserTaskPeer::USER_ID, $this->getId());
+
+			if (!isset($this->lastUserTaskCriteria) || !$this->lastUserTaskCriteria->equals($criteria)) {
+				$this->collUserTasks = UserTaskPeer::doSelectJoinTask($criteria, $con);
+			}
+		}
+		$this->lastUserTaskCriteria = $criteria;
+
+		return $this->collUserTasks;
 	}
 
 } 

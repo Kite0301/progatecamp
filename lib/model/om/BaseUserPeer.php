@@ -13,7 +13,7 @@ abstract class BaseUserPeer {
 	const CLASS_DEFAULT = 'lib.model.User';
 
 	
-	const NUM_COLUMNS = 16;
+	const NUM_COLUMNS = 17;
 
 	
 	const NUM_LAZY_LOAD_COLUMNS = 0;
@@ -50,6 +50,9 @@ abstract class BaseUserPeer {
 	const CONFIRM = 'user.CONFIRM';
 
 	
+	const REMEMBER_KEY = 'user.REMEMBER_KEY';
+
+	
 	const FACEBOOK_ID = 'user.FACEBOOK_ID';
 
 	
@@ -73,18 +76,18 @@ abstract class BaseUserPeer {
 
 	
 	private static $fieldNames = array (
-		BasePeer::TYPE_PHPNAME => array ('Name', 'Kana', 'Birthday', 'Gender', 'Email', 'PhoneNumber', 'Background', 'Reason', 'Prospect', 'Confirm', 'FacebookId', 'TwitterId', 'Display', 'CreatedAt', 'UpdatedAt', 'Id', ),
-		BasePeer::TYPE_COLNAME => array (UserPeer::NAME, UserPeer::KANA, UserPeer::BIRTHDAY, UserPeer::GENDER, UserPeer::EMAIL, UserPeer::PHONE_NUMBER, UserPeer::BACKGROUND, UserPeer::REASON, UserPeer::PROSPECT, UserPeer::CONFIRM, UserPeer::FACEBOOK_ID, UserPeer::TWITTER_ID, UserPeer::DISPLAY, UserPeer::CREATED_AT, UserPeer::UPDATED_AT, UserPeer::ID, ),
-		BasePeer::TYPE_FIELDNAME => array ('name', 'kana', 'birthday', 'gender', 'email', 'phone_number', 'background', 'reason', 'prospect', 'confirm', 'facebook_id', 'twitter_id', 'display', 'created_at', 'updated_at', 'id', ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, )
+		BasePeer::TYPE_PHPNAME => array ('Name', 'Kana', 'Birthday', 'Gender', 'Email', 'PhoneNumber', 'Background', 'Reason', 'Prospect', 'Confirm', 'RememberKey', 'FacebookId', 'TwitterId', 'Display', 'CreatedAt', 'UpdatedAt', 'Id', ),
+		BasePeer::TYPE_COLNAME => array (UserPeer::NAME, UserPeer::KANA, UserPeer::BIRTHDAY, UserPeer::GENDER, UserPeer::EMAIL, UserPeer::PHONE_NUMBER, UserPeer::BACKGROUND, UserPeer::REASON, UserPeer::PROSPECT, UserPeer::CONFIRM, UserPeer::REMEMBER_KEY, UserPeer::FACEBOOK_ID, UserPeer::TWITTER_ID, UserPeer::DISPLAY, UserPeer::CREATED_AT, UserPeer::UPDATED_AT, UserPeer::ID, ),
+		BasePeer::TYPE_FIELDNAME => array ('name', 'kana', 'birthday', 'gender', 'email', 'phone_number', 'background', 'reason', 'prospect', 'confirm', 'remember_key', 'facebook_id', 'twitter_id', 'display', 'created_at', 'updated_at', 'id', ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, )
 	);
 
 	
 	private static $fieldKeys = array (
-		BasePeer::TYPE_PHPNAME => array ('Name' => 0, 'Kana' => 1, 'Birthday' => 2, 'Gender' => 3, 'Email' => 4, 'PhoneNumber' => 5, 'Background' => 6, 'Reason' => 7, 'Prospect' => 8, 'Confirm' => 9, 'FacebookId' => 10, 'TwitterId' => 11, 'Display' => 12, 'CreatedAt' => 13, 'UpdatedAt' => 14, 'Id' => 15, ),
-		BasePeer::TYPE_COLNAME => array (UserPeer::NAME => 0, UserPeer::KANA => 1, UserPeer::BIRTHDAY => 2, UserPeer::GENDER => 3, UserPeer::EMAIL => 4, UserPeer::PHONE_NUMBER => 5, UserPeer::BACKGROUND => 6, UserPeer::REASON => 7, UserPeer::PROSPECT => 8, UserPeer::CONFIRM => 9, UserPeer::FACEBOOK_ID => 10, UserPeer::TWITTER_ID => 11, UserPeer::DISPLAY => 12, UserPeer::CREATED_AT => 13, UserPeer::UPDATED_AT => 14, UserPeer::ID => 15, ),
-		BasePeer::TYPE_FIELDNAME => array ('name' => 0, 'kana' => 1, 'birthday' => 2, 'gender' => 3, 'email' => 4, 'phone_number' => 5, 'background' => 6, 'reason' => 7, 'prospect' => 8, 'confirm' => 9, 'facebook_id' => 10, 'twitter_id' => 11, 'display' => 12, 'created_at' => 13, 'updated_at' => 14, 'id' => 15, ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, )
+		BasePeer::TYPE_PHPNAME => array ('Name' => 0, 'Kana' => 1, 'Birthday' => 2, 'Gender' => 3, 'Email' => 4, 'PhoneNumber' => 5, 'Background' => 6, 'Reason' => 7, 'Prospect' => 8, 'Confirm' => 9, 'RememberKey' => 10, 'FacebookId' => 11, 'TwitterId' => 12, 'Display' => 13, 'CreatedAt' => 14, 'UpdatedAt' => 15, 'Id' => 16, ),
+		BasePeer::TYPE_COLNAME => array (UserPeer::NAME => 0, UserPeer::KANA => 1, UserPeer::BIRTHDAY => 2, UserPeer::GENDER => 3, UserPeer::EMAIL => 4, UserPeer::PHONE_NUMBER => 5, UserPeer::BACKGROUND => 6, UserPeer::REASON => 7, UserPeer::PROSPECT => 8, UserPeer::CONFIRM => 9, UserPeer::REMEMBER_KEY => 10, UserPeer::FACEBOOK_ID => 11, UserPeer::TWITTER_ID => 12, UserPeer::DISPLAY => 13, UserPeer::CREATED_AT => 14, UserPeer::UPDATED_AT => 15, UserPeer::ID => 16, ),
+		BasePeer::TYPE_FIELDNAME => array ('name' => 0, 'kana' => 1, 'birthday' => 2, 'gender' => 3, 'email' => 4, 'phone_number' => 5, 'background' => 6, 'reason' => 7, 'prospect' => 8, 'confirm' => 9, 'remember_key' => 10, 'facebook_id' => 11, 'twitter_id' => 12, 'display' => 13, 'created_at' => 14, 'updated_at' => 15, 'id' => 16, ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, )
 	);
 
 	
@@ -157,6 +160,8 @@ abstract class BaseUserPeer {
 		$criteria->addSelectColumn(UserPeer::PROSPECT);
 
 		$criteria->addSelectColumn(UserPeer::CONFIRM);
+
+		$criteria->addSelectColumn(UserPeer::REMEMBER_KEY);
 
 		$criteria->addSelectColumn(UserPeer::FACEBOOK_ID);
 
@@ -315,6 +320,7 @@ abstract class BaseUserPeer {
 		}
 		$affectedRows = 0; 		try {
 									$con->begin();
+			$affectedRows += UserPeer::doOnDeleteCascade(new Criteria(), $con);
 			$affectedRows += BasePeer::doDeleteAll(UserPeer::TABLE_NAME, $con);
 			$con->commit();
 			return $affectedRows;
@@ -345,7 +351,7 @@ abstract class BaseUserPeer {
 		$affectedRows = 0; 
 		try {
 									$con->begin();
-			
+			$affectedRows += UserPeer::doOnDeleteCascade($criteria, $con);
 			$affectedRows += BasePeer::doDelete($criteria, $con);
 			$con->commit();
 			return $affectedRows;
@@ -353,6 +359,25 @@ abstract class BaseUserPeer {
 			$con->rollback();
 			throw $e;
 		}
+	}
+
+	
+	protected static function doOnDeleteCascade(Criteria $criteria, Connection $con)
+	{
+				$affectedRows = 0;
+
+				$objects = UserPeer::doSelect($criteria, $con);
+		foreach($objects as $obj) {
+
+
+			include_once 'lib/model/UserTask.php';
+
+						$c = new Criteria();
+			
+			$c->add(UserTaskPeer::USER_ID, $obj->getId());
+			$affectedRows += UserTaskPeer::doDelete($c, $con);
+		}
+		return $affectedRows;
 	}
 
 	
