@@ -3,10 +3,10 @@ default:
     content-type: text/html
 
   metas:
-    title:        Progate Camp
+    title:        Progate Camp | 9週間・500時間の超集中型プログラミングキャンプ
     robots:       index, follow
-    description:  symfony project
-    keywords:     symfony, project
+    description:  Progate Campは9週間・500時間の超集中型プログラミングキャンプです。WEBサービスを自分で作り上げながら、プログラミングを習得します。
+    keywords:     Progate, Camp, プログラミング, Ruby On Rails, Ruby, HTML, CSS, 初心者, キャンプ, Git
     language:     en
 
   stylesheets:    [common, main, top, bootstrap]

@@ -29,6 +29,10 @@ video
 	width: 100%;
 }
 
+video{
+	width: 100%;
+}
+
 .theme-color
 {
 	color: #E7BB2F;
@@ -90,7 +94,7 @@ video
 	color: white;
 }
 
-.navi-item li 
+.navi-item li
 {
 	float: left;
 	list-style: none;
@@ -423,7 +427,7 @@ video
 .info-company
 {
 	width: 50%;
-	float: left;	
+	float: left;
 }
 
 .info-main-item

@@ -3,10 +3,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 
+<<<<<<< HEAD
 <?php include_http_metas() ?>
 <?php include_metas() ?>
 
 <?php include_title() ?>
+=======
+<div class="top">
+	<div class="top-background">
+		<div class="top-title">
+			<div class="title">Learn to <span class="theme-color">Code</span>, Learn to be <span class="theme-color">Creative</span></div>
+			<div class="title-sub">− ９週間・５００時間 <!-- -</div>
+			<div class="title-sub">−  -->倍速で成長するプログラミングキャンプ −</div>
+		</div>
+		<div class="top-main">
+			<ul class="top-list">
+				<li>プログラミング経験は不問</li>
+				<li>２ヶ月でゼロからWEBサービスを立ち上げ、プログラミングを習得する</li>
+				<!-- <li>事前課題・全体学習・個人課題・質問会を通した、もれのないカリキュラム</li> -->
+			</ul>
+			<div class="register-now">
+				<div id="register-btn" class="register-btn">今すぐ申し込む</div>
+			</div>
+		</div>
+	</div>
+	<video autoplay loop src="/progate_camp/videos/camp.mp4"></video>
+</div>
+>>>>>>> 75712b562edc08c13d27c13ad6a474351985cacc
 
 <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -263,6 +286,7 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="schedule-item">
 					<div class="schedule-week">
 						<div>Week 2</div>
@@ -483,6 +507,7 @@
 			});
 
 		});
+
 
 	</script>
 
